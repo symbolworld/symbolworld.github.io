@@ -4,7 +4,7 @@ SEOTitle: Sym符号的博客 | Symbol Blog
 header-img: img/home-bg.jpg
 email: symbol975@outlook.com
 description: "这里是 @Sym符号 的个人博客，与你一起发现更大的世界 | 要做一个有 swag 的程序员"
-keyword: "Sym符号, Symbol, 鬼栈, huxpro, @huxpro, Sym符号的博客, Symbol Blog, 博客, 个人网站, 互联网, Web, JavaScript, React, React Native, 前端, 设计"
+keyword: "Sym符号, Symbol, 鬼栈, symbol, @symbol, Sym符号的博客, Symbol Blog, 博客, 个人网站, 互联网, Web, JavaScript, React, React Native, 前端, 设计"
 url: "https://github.com/symbolworld" # your host, for absolute URL
 baseurl: "" # for example, '/blog' if your blog hosted on 'host/blog'
 
@@ -13,11 +13,11 @@ future: true
 
 # SNS settings
 RSS: false
-weibo_username: huxpro
-zhihu_username: huxpro
-github_username: huxpro
-twitter_username: huxpro
-#facebook_username:  huxpro
+weibo_username: symbol
+zhihu_username: symbol
+github_username: symbol
+twitter_username: symbol
+#facebook_username:  symbol
 #linkedin_username:  firstname-lastname-idxxxx
 
 # Build settings
