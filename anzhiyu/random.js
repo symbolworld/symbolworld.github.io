@@ -1,3 +1,3 @@
-var posts=["wenzhang/这是另一篇新的博文/","wenzhang/这是一篇新博文/","wenzhang/hello-world/"];function toRandomPost(){
+var posts=["wenzhang/QQ机器人部署到服务器/","wenzhang/Git的简单使用/","wenzhang/Typora配合github来做版本管理/","wenzhang/picgo配置/","wenzhang/ffmpeg基础使用/","wenzhang/wiki知识图库的搭建-win10/","wenzhang/字符集讲解/","wenzhang/常用CMD命令/","wenzhang/将markdown转为html/","wenzhang/将网盘挂载到本地/","wenzhang/使用cloudflare配置图床/","wenzhang/虚拟机安装Centos系统/","wenzhang/计算机思维/","wenzhang/高效学习/","wenzhang/这是另一篇新的博文/","wenzhang/这是一篇新博文/"];function toRandomPost(){
     pjax.loadUrl('/'+posts[Math.floor(Math.random() * posts.length)]);
   };
