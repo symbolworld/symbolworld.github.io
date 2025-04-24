@@ -1,3 +1,3 @@
-var posts=["wenzhang/高效学习/","wenzhang/Git的简单使用/","wenzhang/QQ机器人部署到服务器/","wenzhang/Typora配合github来做版本管理/","wenzhang/ffmpeg基础使用/","wenzhang/picgo配置/","wenzhang/wiki知识图库的搭建-win10/","wenzhang/使用cloudflare配置图床/","wenzhang/字符集讲解/","wenzhang/常用CMD命令/","wenzhang/将markdown转为html/","wenzhang/将网盘挂载到本地/","wenzhang/虚拟机安装Centos系统/","wenzhang/计算机思维/","wenzhang/Markdown与Typora介绍/"];function toRandomPost(){
+var posts=["wenzhang/高效学习/","wenzhang/Git的简单使用/","wenzhang/QQ机器人部署到服务器/","wenzhang/Typora配合github来做版本管理/","wenzhang/ffmpeg基础使用/","wenzhang/picgo配置/","wenzhang/使用cloudflare配置图床/","wenzhang/wiki知识图库的搭建-win10/","wenzhang/字符集讲解/","wenzhang/将markdown转为html/","wenzhang/将网盘挂载到本地/","wenzhang/常用CMD命令/","wenzhang/计算机思维/","wenzhang/虚拟机安装Centos系统/","wenzhang/Markdown与Typora介绍/"];function toRandomPost(){
     pjax.loadUrl('/'+posts[Math.floor(Math.random() * posts.length)]);
   };
