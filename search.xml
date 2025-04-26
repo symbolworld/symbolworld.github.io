@@ -58,6 +58,31 @@
     
     
     <entry>
+      <title>picgo的使用</title>
+      <link href="/wenzhang/picgo%E9%85%8D%E7%BD%AE/"/>
+      <url>/wenzhang/picgo%E9%85%8D%E7%BD%AE/</url>
+      
+        <content type="html"><![CDATA[<h1 id="一、下载安装"><a href="#一、下载安装" class="headerlink" title="一、下载安装"></a>一、下载安装</h1><p>在Github上下载 <a href="https://github.com/Molunerfinn/PicGo/releases">Releases · Molunerfinn&#x2F;PicGo (github.com)</a></p><p>以下演示用的是2.3.1-beta.5 版本</p><p>下载安装即可</p><h1 id="二、Github的配置"><a href="#二、Github的配置" class="headerlink" title="二、Github的配置"></a>二、Github的配置</h1><p><img src="https://picgo.symbol.cloudns.be/img/picgo.png"></p><p>配置如上，首先要在Github在开通一个账户，新建仓库名为PicGo.这里是演示，名字不重要，重要的是要有仓库保存图片。</p><p>分支名填写 main </p><p>指定路径 img&#x2F; 一定要填写目录的形式，即要有 &#x2F;</p><p>Token的配置：</p><p>点击头像–&gt;Settings–&gt;Developer settings</p><p>再选择 Personal access tokens</p><p>点击Generate a personal access token生成一个新的令牌</p><p>把repo这个勾打上即可，然后Generate token </p><p>复制到图床上要填写token的位置。</p><p>github上这个token值只显示一次。</p><p>指定存储路径可随意填写</p><p>自定义域名是用来加速的，这里写的是：<a href="https://cdn.staticaly.com/%E5%90%8D%E5%AD%97/%E4%BB%93%E5%BA%93@main">https://cdn.staticaly.com/名字/仓库@main</a></p><p>Github图床的配置已经设置好了，直接把图片上传上去，复制链接到Markdown编辑器上就可以看到图片了。</p><p>还有更多其他平台可以设置，Github用着暂时没问题，如果出现问题再换个平台。</p><h3 id="三、遇到的坑"><a href="#三、遇到的坑" class="headerlink" title="三、遇到的坑"></a>三、遇到的坑</h3><p>1.出现以下情况</p><p><img src="https://picgo.symbol.cloudns.be/img/picgo%E5%87%BA%E9%94%99.png"></p><p>这是因为打开了fast-github,导致的错误，把fast-github关闭即可。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 软件工具 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> picgo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Typora配合github做版本管理</title>
       <link href="/wenzhang/Typora%E9%85%8D%E5%90%88github%E6%9D%A5%E5%81%9A%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/"/>
       <url>/wenzhang/Typora%E9%85%8D%E5%90%88github%E6%9D%A5%E5%81%9A%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/</url>
@@ -110,11 +135,11 @@
     
     
     <entry>
-      <title>picgo的使用</title>
-      <link href="/wenzhang/picgo%E9%85%8D%E7%BD%AE/"/>
-      <url>/wenzhang/picgo%E9%85%8D%E7%BD%AE/</url>
+      <title>wiki知识图库搭建</title>
+      <link href="/wenzhang/wiki%E7%9F%A5%E8%AF%86%E5%9B%BE%E5%BA%93%E7%9A%84%E6%90%AD%E5%BB%BA-win10/"/>
+      <url>/wenzhang/wiki%E7%9F%A5%E8%AF%86%E5%9B%BE%E5%BA%93%E7%9A%84%E6%90%AD%E5%BB%BA-win10/</url>
       
-        <content type="html"><![CDATA[<h1 id="一、下载安装"><a href="#一、下载安装" class="headerlink" title="一、下载安装"></a>一、下载安装</h1><p>在Github上下载 <a href="https://github.com/Molunerfinn/PicGo/releases">Releases · Molunerfinn&#x2F;PicGo (github.com)</a></p><p>以下演示用的是2.3.1-beta.5 版本</p><p>下载安装即可</p><h1 id="二、Github的配置"><a href="#二、Github的配置" class="headerlink" title="二、Github的配置"></a>二、Github的配置</h1><p><img src="https://picgo.symbol.cloudns.be/img/picgo.png"></p><p>配置如上，首先要在Github在开通一个账户，新建仓库名为PicGo.这里是演示，名字不重要，重要的是要有仓库保存图片。</p><p>分支名填写 main </p><p>指定路径 img&#x2F; 一定要填写目录的形式，即要有 &#x2F;</p><p>Token的配置：</p><p>点击头像–&gt;Settings–&gt;Developer settings</p><p>再选择 Personal access tokens</p><p>点击Generate a personal access token生成一个新的令牌</p><p>把repo这个勾打上即可，然后Generate token </p><p>复制到图床上要填写token的位置。</p><p>github上这个token值只显示一次。</p><p>指定存储路径可随意填写</p><p>自定义域名是用来加速的，这里写的是：<a href="https://cdn.staticaly.com/%E5%90%8D%E5%AD%97/%E4%BB%93%E5%BA%93@main">https://cdn.staticaly.com/名字/仓库@main</a></p><p>Github图床的配置已经设置好了，直接把图片上传上去，复制链接到Markdown编辑器上就可以看到图片了。</p><p>还有更多其他平台可以设置，Github用着暂时没问题，如果出现问题再换个平台。</p><h3 id="三、遇到的坑"><a href="#三、遇到的坑" class="headerlink" title="三、遇到的坑"></a>三、遇到的坑</h3><p>1.出现以下情况</p><p><img src="https://picgo.symbol.cloudns.be/img/picgo%E5%87%BA%E9%94%99.png"></p><p>这是因为打开了fast-github,导致的错误，把fast-github关闭即可。</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="第一步、下载PhPstudy"><a href="#第一步、下载PhPstudy" class="headerlink" title="第一步、下载PhPstudy"></a>第一步、下载PhPstudy</h2><p>浏览器输入phpsduty</p><p>或者打开：(<a href="https://www.xp.cn/download.html">https://www.xp.cn/download.html</a>)</p><p>下载对应的版本，64位系统就下载64位的。</p><h2 id="第二步、下载Wiki"><a href="#第二步、下载Wiki" class="headerlink" title="第二步、下载Wiki"></a>第二步、下载Wiki</h2><p>打开github:    (<a href="http://www.github.com/">www.github.com</a>)</p><p>搜索：Wikitten，选择 devaneando&#x2F;Wikitten。</p><p>找到Release或者Tags,下载V1.1.0版本，这个版本比较稳定。</p><h2 id="第三步、安装phpstudy"><a href="#第三步、安装phpstudy" class="headerlink" title="第三步、安装phpstudy"></a>第三步、安装phpstudy</h2><p>点击安装即可,默认是安装在D:\phpstudy_pro。不需要更改。</p><h2 id="第四步、设置phpstudy"><a href="#第四步、设置phpstudy" class="headerlink" title="第四步、设置phpstudy"></a>第四步、设置phpstudy</h2><p><img src="https://picgo.symbol.cloudns.be/img/image-20221003165811877.png"></p><p>点击一键启动中的切换，把Web切换成Apache2.4.39 ,点击确定</p><h5 id="点击软件管理，找到PHP，选择对应的版本，点设置。我这里是php7-3-4nts"><a href="#点击软件管理，找到PHP，选择对应的版本，点设置。我这里是php7-3-4nts" class="headerlink" title="点击软件管理，找到PHP，选择对应的版本，点设置。我这里是php7.3.4nts"></a>点击软件管理，找到PHP，选择对应的版本，点设置。我这里是php7.3.4nts</h5><p><img src="https://picgo.symbol.cloudns.be/img/image-20221003170148716.png"></p><h5 id="其他的可以不用设置了，回到首页，点击WNMP启动"><a href="#其他的可以不用设置了，回到首页，点击WNMP启动" class="headerlink" title="其他的可以不用设置了，回到首页，点击WNMP启动"></a>其他的可以不用设置了，回到首页，点击WNMP启动</h5><h2 id="第五步、测试环境"><a href="#第五步、测试环境" class="headerlink" title="第五步、测试环境"></a>第五步、测试环境</h2><p>在浏览器中输入 localhost,可以看到站点建立成功。</p><h2 id="第六步、把Wiki配置到phpsduty中"><a href="#第六步、把Wiki配置到phpsduty中" class="headerlink" title="第六步、把Wiki配置到phpsduty中"></a>第六步、把Wiki配置到phpsduty中</h2><p>解压下载好的Wikitten-1.1.0,把整个目录下的文件，覆盖到D:\phpstudy_pro\WWW 目录下。原有的文件，删除即可。</p><p><img src="https://picgo.symbol.cloudns.be/img/image-20221003171022216.png"></p><p>复制一份config.php-example为config.php.打开config.php，可以对配置文件进行编辑。</p><p>一般打开允许在线编辑：define(‘ENABLE_EDITING’, true);</p><p>具体的功能，同英文的意思一样。</p><p>再次在浏览器打开：localhost ,即可看到整个目录。</p><h5 id="到这里，整个配置就完成了，还有两个注意点。"><a href="#到这里，整个配置就完成了，还有两个注意点。" class="headerlink" title="到这里，整个配置就完成了，还有两个注意点。"></a>到这里，整个配置就完成了，还有两个注意点。</h5><h3 id="注意点1"><a href="#注意点1" class="headerlink" title="注意点1"></a>注意点1</h3><p>D:\phpstudy_pro\WWW\library 目录是整个库目录，在此目录下再创建树状结构即可以浏览器端看到相应目录</p><h3 id="注意点2"><a href="#注意点2" class="headerlink" title="注意点2"></a>注意点2</h3><p>要使软件能够打开，后台要运行着phpstudy或者运行相应的服务。</p>]]></content>
       
       
       <categories>
@@ -126,7 +151,9 @@
       
         <tags>
             
-            <tag> picgo </tag>
+            <tag> github </tag>
+            
+            <tag> wiki </tag>
             
         </tags>
       
@@ -152,33 +179,6 @@
         <tags>
             
             <tag> CF </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>wiki知识图库搭建</title>
-      <link href="/wenzhang/wiki%E7%9F%A5%E8%AF%86%E5%9B%BE%E5%BA%93%E7%9A%84%E6%90%AD%E5%BB%BA-win10/"/>
-      <url>/wenzhang/wiki%E7%9F%A5%E8%AF%86%E5%9B%BE%E5%BA%93%E7%9A%84%E6%90%AD%E5%BB%BA-win10/</url>
-      
-        <content type="html"><![CDATA[<h2 id="第一步、下载PhPstudy"><a href="#第一步、下载PhPstudy" class="headerlink" title="第一步、下载PhPstudy"></a>第一步、下载PhPstudy</h2><p>浏览器输入phpsduty</p><p>或者打开：(<a href="https://www.xp.cn/download.html">https://www.xp.cn/download.html</a>)</p><p>下载对应的版本，64位系统就下载64位的。</p><h2 id="第二步、下载Wiki"><a href="#第二步、下载Wiki" class="headerlink" title="第二步、下载Wiki"></a>第二步、下载Wiki</h2><p>打开github:    (<a href="http://www.github.com/">www.github.com</a>)</p><p>搜索：Wikitten，选择 devaneando&#x2F;Wikitten。</p><p>找到Release或者Tags,下载V1.1.0版本，这个版本比较稳定。</p><h2 id="第三步、安装phpstudy"><a href="#第三步、安装phpstudy" class="headerlink" title="第三步、安装phpstudy"></a>第三步、安装phpstudy</h2><p>点击安装即可,默认是安装在D:\phpstudy_pro。不需要更改。</p><h2 id="第四步、设置phpstudy"><a href="#第四步、设置phpstudy" class="headerlink" title="第四步、设置phpstudy"></a>第四步、设置phpstudy</h2><p><img src="https://picgo.symbol.cloudns.be/img/image-20221003165811877.png"></p><p>点击一键启动中的切换，把Web切换成Apache2.4.39 ,点击确定</p><h5 id="点击软件管理，找到PHP，选择对应的版本，点设置。我这里是php7-3-4nts"><a href="#点击软件管理，找到PHP，选择对应的版本，点设置。我这里是php7-3-4nts" class="headerlink" title="点击软件管理，找到PHP，选择对应的版本，点设置。我这里是php7.3.4nts"></a>点击软件管理，找到PHP，选择对应的版本，点设置。我这里是php7.3.4nts</h5><p><img src="https://picgo.symbol.cloudns.be/img/image-20221003170148716.png"></p><h5 id="其他的可以不用设置了，回到首页，点击WNMP启动"><a href="#其他的可以不用设置了，回到首页，点击WNMP启动" class="headerlink" title="其他的可以不用设置了，回到首页，点击WNMP启动"></a>其他的可以不用设置了，回到首页，点击WNMP启动</h5><h2 id="第五步、测试环境"><a href="#第五步、测试环境" class="headerlink" title="第五步、测试环境"></a>第五步、测试环境</h2><p>在浏览器中输入 localhost,可以看到站点建立成功。</p><h2 id="第六步、把Wiki配置到phpsduty中"><a href="#第六步、把Wiki配置到phpsduty中" class="headerlink" title="第六步、把Wiki配置到phpsduty中"></a>第六步、把Wiki配置到phpsduty中</h2><p>解压下载好的Wikitten-1.1.0,把整个目录下的文件，覆盖到D:\phpstudy_pro\WWW 目录下。原有的文件，删除即可。</p><p><img src="https://picgo.symbol.cloudns.be/img/image-20221003171022216.png"></p><p>复制一份config.php-example为config.php.打开config.php，可以对配置文件进行编辑。</p><p>一般打开允许在线编辑：define(‘ENABLE_EDITING’, true);</p><p>具体的功能，同英文的意思一样。</p><p>再次在浏览器打开：localhost ,即可看到整个目录。</p><h5 id="到这里，整个配置就完成了，还有两个注意点。"><a href="#到这里，整个配置就完成了，还有两个注意点。" class="headerlink" title="到这里，整个配置就完成了，还有两个注意点。"></a>到这里，整个配置就完成了，还有两个注意点。</h5><h3 id="注意点1"><a href="#注意点1" class="headerlink" title="注意点1"></a>注意点1</h3><p>D:\phpstudy_pro\WWW\library 目录是整个库目录，在此目录下再创建树状结构即可以浏览器端看到相应目录</p><h3 id="注意点2"><a href="#注意点2" class="headerlink" title="注意点2"></a>注意点2</h3><p>要使软件能够打开，后台要运行着phpstudy或者运行相应的服务。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 软件工具 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> github </tag>
-            
-            <tag> wiki </tag>
             
         </tags>
       
@@ -287,6 +287,31 @@
     
     
     <entry>
+      <title>虚拟机安装Centos系统</title>
+      <link href="/wenzhang/%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85Centos%E7%B3%BB%E7%BB%9F/"/>
+      <url>/wenzhang/%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85Centos%E7%B3%BB%E7%BB%9F/</url>
+      
+        <content type="html"><![CDATA[<h1 id="虚拟机安装Centos系统"><a href="#虚拟机安装Centos系统" class="headerlink" title="虚拟机安装Centos系统"></a>虚拟机安装Centos系统</h1><h3 id="第一步、安装虚拟机软件"><a href="#第一步、安装虚拟机软件" class="headerlink" title="第一步、安装虚拟机软件"></a>第一步、安装虚拟机软件</h3><p>这里用的是<code>VMware</code>，直接去百度或者谷歌搜索下载安装即可，安装的时候需要用激活码来激活。</p><h3 id="第二步、下载Centos镜像文件"><a href="#第二步、下载Centos镜像文件" class="headerlink" title="第二步、下载Centos镜像文件"></a>第二步、下载Centos镜像文件</h3><p>下载地址：<a href="https://www.centos.org/download/">Download (centos.org)</a></p><p>选择对应的版本下载，这里用的是：<code>CentOS-7-x86_64-DVD-2009.iso</code></p><h3 id="第三步、安装系统"><a href="#第三步、安装系统" class="headerlink" title="第三步、安装系统"></a>第三步、安装系统</h3><p>安装前先要配置硬盘，内存，CPU，网络等硬件信息，再选择系统镜像文件进行安装。安装过程要求输入用户名，密码，选择时区，键盘等信息。跟着安装步骤一步步走就行。</p><p>我这里配置了信息如下：硬盘20G，内存1G，CPU 1核心，网络选择NAT模式。这些配置，在系统成功安装后，也是可以重新设置的。</p><p>重点是网络的选择，一般使用NAT模式或者桥接模式。我这里使用了自定义的NAT模式。</p><p><img src="https://picgo.symbol.cloudns.be/img/vmnet8.png" alt="自定义NAT"></p><p>NAT使用的是本地的VMnet8网卡。</p><p>打开虚拟机菜单栏中的编辑，选择虚拟网络编辑器，查看网卡的一些信息</p><p><img src="https://picgo.symbol.cloudns.be/img/NAT%E8%AE%BE%E7%BD%AE.png" alt="NAT设置"></p><p>子网IP，子网掩码和网关要记住，等一下配置网卡的静态IP需要用到。</p><p>也可以在<code>cmd</code>命令行中查看<code>VMnet8</code>网卡的<code>IP</code></p><p><img src="https://picgo.symbol.cloudns.be/img/cmd.png" alt="NAT设置"></p><p>到这一步，我们知道的网卡信息如下：</p><p>本地的VMnet8 IP是:<code>192.168.119.1</code></p><p>NAT的子网掩码是：<code>255.255.255.0</code></p><p>NAT的网关是：<code>192.168.119.2</code></p><h3 id="第四步、配置网卡地址为静态IP"><a href="#第四步、配置网卡地址为静态IP" class="headerlink" title="第四步、配置网卡地址为静态IP"></a>第四步、配置网卡地址为静态IP</h3><p>默认的是<code>DHCP</code>动态分配，那么为什么要设置静态IP呢？这是为了方便我们用SSH工具去连接，如果不设置静态IP，那么网卡的IP就可能发生变化，SSH的设置就得重新配置，比较麻烦。</p><p>我们先用命令查看网卡名称：<code>ip a</code></p><p>一般有两个名称，一个是<code>lo</code>,本地回环地址；另一个才是我们要修改的网卡，我这里的名称是：<code>ens33</code>。名称有可能会不一样，这都没关系，操作是一样的。</p><p>打开<code>ens33</code>的网卡配置：</p><p><code>vi /etc/sysconfig/network-scripts/ifcfg-ens33</code></p><p>修改如下：</p><p><img src="https://picgo.symbol.cloudns.be/img/ens33%E9%85%8D%E7%BD%AE.png" alt="NAT设置"></p><p>把<code>BOOTPROTO从dhcp，改为static</code></p><p>把<code>ONBOOT=no，改为yes</code></p><p>添加配置信息如上图</p><p><code>GATEWAY,NETMASK,</code>配置为与刚才记录的一样，<code>DNS1</code>配置为网关的地址。</p><p><code>IPADDR</code>在子网范围内随便选一个即可，注意不要与网关和本地的<code>VMnet8</code>相同。</p><p>配置好之后，保存退出，然后重启网卡服务：<code>systemctl restart network</code></p><p>重启完之后再用：<code>ip a </code>命令就可查看到刚才的配置信息。</p><h3 id="第五步、使用SSH工具连接Centos"><a href="#第五步、使用SSH工具连接Centos" class="headerlink" title="第五步、使用SSH工具连接Centos"></a>第五步、使用SSH工具连接Centos</h3><p>这一步比较简单，输入<code>IP</code>地址，用户名和密码等即可。这一步可能会发生错误，连接不上。</p><p>可能原因是系统没有安装ssh服务，解决方法如下：</p><p>安装：<code>yum install openssh-server</code></p><p>安装完成，启动服务，并设置开机启动</p><p>启动：<code>systemctl start sshd</code></p><p>设置开机启动：<code>systemctl enable sshd</code></p><p>ssh默认端口为22，一般不需要修改，如需修改配置，可打开配置文件来修改。</p><p>配置文件路径：<code>/etc/ssh/sshd_config</code></p><p>修改后重新加载：<code>systemctl reload sshd</code></p><h4 id="补充：NAT模式，桥接模式和主机模式，这三者之间的区别。"><a href="#补充：NAT模式，桥接模式和主机模式，这三者之间的区别。" class="headerlink" title="补充：NAT模式，桥接模式和主机模式，这三者之间的区别。"></a>补充：NAT模式，桥接模式和主机模式，这三者之间的区别。</h4><p>首先是桥接模式，这个模式下，本地与虚拟机共用一张网卡，他们之间是平等关系。局域网内的设备也可以访问该虚拟机。</p><p>NAT模式是：主机与虚拟机之间多了一层地址转换，虚拟机网卡与本地网卡IP不在同一网段，从虚拟机访问网络时，IP会转为主机IP来访问。类似于我们平时使用多台设备连接wifi，我们访问外部网络时，我们多台设备的IP地址也会转为同一个公网IP去访问。</p><p>主机模式就是：虚拟机只能跟主机通信，虚拟机访问不了外部网络。</p><p>设置这三种模式是为了不同的网络访问权限。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 计算机 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 虚拟机 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>计算机思维</title>
       <link href="/wenzhang/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%80%9D%E7%BB%B4/"/>
       <url>/wenzhang/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%80%9D%E7%BB%B4/</url>
@@ -329,31 +354,6 @@
         <tags>
             
             <tag> 学习 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>虚拟机安装Centos系统</title>
-      <link href="/wenzhang/%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85Centos%E7%B3%BB%E7%BB%9F/"/>
-      <url>/wenzhang/%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85Centos%E7%B3%BB%E7%BB%9F/</url>
-      
-        <content type="html"><![CDATA[<h1 id="虚拟机安装Centos系统"><a href="#虚拟机安装Centos系统" class="headerlink" title="虚拟机安装Centos系统"></a>虚拟机安装Centos系统</h1><h3 id="第一步、安装虚拟机软件"><a href="#第一步、安装虚拟机软件" class="headerlink" title="第一步、安装虚拟机软件"></a>第一步、安装虚拟机软件</h3><p>这里用的是<code>VMware</code>，直接去百度或者谷歌搜索下载安装即可，安装的时候需要用激活码来激活。</p><h3 id="第二步、下载Centos镜像文件"><a href="#第二步、下载Centos镜像文件" class="headerlink" title="第二步、下载Centos镜像文件"></a>第二步、下载Centos镜像文件</h3><p>下载地址：<a href="https://www.centos.org/download/">Download (centos.org)</a></p><p>选择对应的版本下载，这里用的是：<code>CentOS-7-x86_64-DVD-2009.iso</code></p><h3 id="第三步、安装系统"><a href="#第三步、安装系统" class="headerlink" title="第三步、安装系统"></a>第三步、安装系统</h3><p>安装前先要配置硬盘，内存，CPU，网络等硬件信息，再选择系统镜像文件进行安装。安装过程要求输入用户名，密码，选择时区，键盘等信息。跟着安装步骤一步步走就行。</p><p>我这里配置了信息如下：硬盘20G，内存1G，CPU 1核心，网络选择NAT模式。这些配置，在系统成功安装后，也是可以重新设置的。</p><p>重点是网络的选择，一般使用NAT模式或者桥接模式。我这里使用了自定义的NAT模式。</p><p><img src="https://picgo.symbol.cloudns.be/img/vmnet8.png" alt="自定义NAT"></p><p>NAT使用的是本地的VMnet8网卡。</p><p>打开虚拟机菜单栏中的编辑，选择虚拟网络编辑器，查看网卡的一些信息</p><p><img src="https://picgo.symbol.cloudns.be/img/NAT%E8%AE%BE%E7%BD%AE.png" alt="NAT设置"></p><p>子网IP，子网掩码和网关要记住，等一下配置网卡的静态IP需要用到。</p><p>也可以在<code>cmd</code>命令行中查看<code>VMnet8</code>网卡的<code>IP</code></p><p><img src="https://picgo.symbol.cloudns.be/img/cmd.png" alt="NAT设置"></p><p>到这一步，我们知道的网卡信息如下：</p><p>本地的VMnet8 IP是:<code>192.168.119.1</code></p><p>NAT的子网掩码是：<code>255.255.255.0</code></p><p>NAT的网关是：<code>192.168.119.2</code></p><h3 id="第四步、配置网卡地址为静态IP"><a href="#第四步、配置网卡地址为静态IP" class="headerlink" title="第四步、配置网卡地址为静态IP"></a>第四步、配置网卡地址为静态IP</h3><p>默认的是<code>DHCP</code>动态分配，那么为什么要设置静态IP呢？这是为了方便我们用SSH工具去连接，如果不设置静态IP，那么网卡的IP就可能发生变化，SSH的设置就得重新配置，比较麻烦。</p><p>我们先用命令查看网卡名称：<code>ip a</code></p><p>一般有两个名称，一个是<code>lo</code>,本地回环地址；另一个才是我们要修改的网卡，我这里的名称是：<code>ens33</code>。名称有可能会不一样，这都没关系，操作是一样的。</p><p>打开<code>ens33</code>的网卡配置：</p><p><code>vi /etc/sysconfig/network-scripts/ifcfg-ens33</code></p><p>修改如下：</p><p><img src="https://picgo.symbol.cloudns.be/img/ens33%E9%85%8D%E7%BD%AE.png" alt="NAT设置"></p><p>把<code>BOOTPROTO从dhcp，改为static</code></p><p>把<code>ONBOOT=no，改为yes</code></p><p>添加配置信息如上图</p><p><code>GATEWAY,NETMASK,</code>配置为与刚才记录的一样，<code>DNS1</code>配置为网关的地址。</p><p><code>IPADDR</code>在子网范围内随便选一个即可，注意不要与网关和本地的<code>VMnet8</code>相同。</p><p>配置好之后，保存退出，然后重启网卡服务：<code>systemctl restart network</code></p><p>重启完之后再用：<code>ip a </code>命令就可查看到刚才的配置信息。</p><h3 id="第五步、使用SSH工具连接Centos"><a href="#第五步、使用SSH工具连接Centos" class="headerlink" title="第五步、使用SSH工具连接Centos"></a>第五步、使用SSH工具连接Centos</h3><p>这一步比较简单，输入<code>IP</code>地址，用户名和密码等即可。这一步可能会发生错误，连接不上。</p><p>可能原因是系统没有安装ssh服务，解决方法如下：</p><p>安装：<code>yum install openssh-server</code></p><p>安装完成，启动服务，并设置开机启动</p><p>启动：<code>systemctl start sshd</code></p><p>设置开机启动：<code>systemctl enable sshd</code></p><p>ssh默认端口为22，一般不需要修改，如需修改配置，可打开配置文件来修改。</p><p>配置文件路径：<code>/etc/ssh/sshd_config</code></p><p>修改后重新加载：<code>systemctl reload sshd</code></p><h4 id="补充：NAT模式，桥接模式和主机模式，这三者之间的区别。"><a href="#补充：NAT模式，桥接模式和主机模式，这三者之间的区别。" class="headerlink" title="补充：NAT模式，桥接模式和主机模式，这三者之间的区别。"></a>补充：NAT模式，桥接模式和主机模式，这三者之间的区别。</h4><p>首先是桥接模式，这个模式下，本地与虚拟机共用一张网卡，他们之间是平等关系。局域网内的设备也可以访问该虚拟机。</p><p>NAT模式是：主机与虚拟机之间多了一层地址转换，虚拟机网卡与本地网卡IP不在同一网段，从虚拟机访问网络时，IP会转为主机IP来访问。类似于我们平时使用多台设备连接wifi，我们访问外部网络时，我们多台设备的IP地址也会转为同一个公网IP去访问。</p><p>主机模式就是：虚拟机只能跟主机通信，虚拟机访问不了外部网络。</p><p>设置这三种模式是为了不同的网络访问权限。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 计算机 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 虚拟机 </tag>
             
         </tags>
       
