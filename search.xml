@@ -29,25 +29,27 @@
     
     
     <entry>
-      <title>Typora配合github做版本管理</title>
-      <link href="/wenzhang/Typora%E9%85%8D%E5%90%88github%E6%9D%A5%E5%81%9A%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/"/>
-      <url>/wenzhang/Typora%E9%85%8D%E5%90%88github%E6%9D%A5%E5%81%9A%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/</url>
+      <title>QQ机器人部署到服务器</title>
+      <link href="/wenzhang/QQ%E6%9C%BA%E5%99%A8%E4%BA%BA%E9%83%A8%E7%BD%B2%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+      <url>/wenzhang/QQ%E6%9C%BA%E5%99%A8%E4%BA%BA%E9%83%A8%E7%BD%B2%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/</url>
       
-        <content type="html"><![CDATA[<h1 id="使用github来做版本管理"><a href="#使用github来做版本管理" class="headerlink" title="使用github来做版本管理"></a>使用github来做版本管理</h1><ul><li><p>注册一个github账户，记住email和name.</p></li><li><p>下载安装一个winddows版本的git：<a href="https://gitforwindows.org/">Git for Windows</a></p><h2 id="配置本机的公钥和私钥"><a href="#配置本机的公钥和私钥" class="headerlink" title="配置本机的公钥和私钥"></a>配置本机的公钥和私钥</h2></li><li><p>在用户目录下新建一个 <strong>.ssh</strong> 目录，进入**.ssh** ,右键点击：<code>Git Bash Here</code></p></li><li><p>执行：<code>ssh-keygen -t rsa</code> 并按回车。(如果提示没有ssh-keygen命令，可以在系统设置中添加可选功能，把openssh客户端和服务端一起安装。)</p></li><li><p>执行完成之后，会在.ssh 目录下生成两个文件。<code>id_rsa,id_rsa_pub</code>.其中<code>id_rsa.pub</code>是公钥</p></li><li><p>打开github的设置，选择<code>SSH Keys</code>，添加一个<code>new SSH key</code>,输入<code>id_rsa.pub</code>中的内容。</p></li><li><p>打开要保存在github的笔记仓库（没有就新建一个），复制SSH链接。</p></li></ul><h2 id="远端与本地的同步"><a href="#远端与本地的同步" class="headerlink" title="远端与本地的同步"></a>远端与本地的同步</h2><ul><li>在本地新建一个文件夹，用来同步github。进入文件夹执行 <code>Git Bash Here</code></li><li>拉取到本地，输入 <code>git clone ssh链接</code>  ssh链接就是上一步复制的链接</li><li>进入有.git的新生成的文件夹，这里就可以创建树状结构的文件目录了。</li></ul><h2 id="本地提交到github"><a href="#本地提交到github" class="headerlink" title="本地提交到github"></a>本地提交到github</h2><ul><li><p>进入到有.github的文件夹，执行 <code>Git Bash Here</code> </p></li><li><p>添加全部新文件 <code>git add .</code> 也可以手动指定添加哪些文件</p></li><li><p>提交：<code>git commit -m &quot;描述&quot;</code></p></li><li><p>如果在提交这一步出错，需要设置一下githhub账户的邮箱和名字。</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.email &quot;you@example.com&quot;</span><br><span class="line">git config --global user.name &quot;Your Name&quot;</span><br></pre></td></tr></table></figure><p>设置好后，再次提交就行了。</p></li><li><p>Push到github</p><p><code>git push</code></p></li></ul><p>到此，同步设置已经完成了。</p>]]></content>
+        <content type="html"><![CDATA[<h3 id="QQ机器人部署到服务器"><a href="#QQ机器人部署到服务器" class="headerlink" title="QQ机器人部署到服务器"></a>QQ机器人部署到服务器</h3><p>服务器：<strong>centos7.63.10.0-1160.76.1.el7.x86_64</strong></p><p>所需环境：</p><p><strong>openssl&gt;&#x3D;1.1.1</strong></p><p><strong>python&gt;&#x3D;3.10</strong></p><h4 id="OpenSSL安装"><a href="#OpenSSL安装" class="headerlink" title="OpenSSL安装"></a>OpenSSL安装</h4><p>0、如果你的版本**&gt;&#x3D;1.1.1<strong>，则不需要安装。（版本查看：</strong>openssl version**）</p><p>1、下载<strong>openssl</strong></p><p>下载地址：<a href="https://github.com/openssl/openssl/tags">下载地址)</a></p><p>2、将下载好的文件，上传到服务器，比如我放到了 <strong>&#x2F;root&#x2F;qin&#x2F;</strong> 这个目录下</p><p>也可以直接下载：<code>wget https://www.openssl.org/source/openssl-1.1.1n.tar.gz --no-check-certificate</code></p><p>本人下载的文件名是：<strong>openssl-OpenSSL_1_1_1o.tar.gz</strong></p><p>3、解压：<code>tar -zxvf openssl-OpenSSL_1_1_1o.tar.gz</code></p><p>4、<code>cd openssl-OpenSSL </code></p><p>5、配置：<code>./config --prefix=/usr/local/openssl</code></p><p>6、编译和安装：<code>make -j &amp;&amp; make install</code></p><p>7、查看版本：<code>openssl version</code></p><p>如果版本不对，需要备份原来的，再创建软链接</p><p>8、备份：<code>mv /usr/bin/openssl /usr/bin/openssl.bak</code></p><p>9、创建<strong>openssl</strong>命令软链接：</p><p><code>ln -s /usr/local/openssl/bin/openssl /usr/bin/openssl </code></p><p><code>ldconfig</code></p><p>10、对<strong>libssl.so.1.1</strong>文件创建软链接。假如<strong>libssl.so.1.1</strong> 文件在**&#x2F;usr&#x2F;local&#x2F;openssl&#x2F;lib&#x2F;**下面，如果找不到就看看lib64有没有</p><p><code>ln -s /usr/local/openssl/lib/libssl.so.1.1 /usr/lib64/libssl.so.1.1</code></p><p><code>ln -s /usr/local/openssl/lib/libcrypto.so.1.1 /usr/lib64/libcrypto.so.1.1</code></p><p><code>ldconfig</code></p><p>11、添加环境变量，路径需要与自己系统中的相同。</p><p><code> export LD_LIBRARY_PATH=/usr/local/openssl/lib:$LD_LIBRARY_PATH</code></p><p><code>source ~/.bash_profile</code></p><p>12、再次查看版本：<code>openssl version</code></p><p>到这里，确保版本正确再进行下一步。</p><h3 id="Python安装"><a href="#Python安装" class="headerlink" title="Python安装"></a>Python安装</h3><p><strong>python</strong>环境的要求是: <strong>3.10&#x3D;&lt; verion &lt;3.11</strong></p><p>0、安装一些必备的依赖库：<code>yum install -y ncurses-devel gdbm-devel xz-devel sqlite-devel tk-devel uuid-devel readline-devel bzip2-devel libffi-devel</code></p><p><code>yum install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel libffi-devel gcc make -y</code></p><p>1、切换到 <strong>&#x2F;root&#x2F;qin&#x2F;<strong>目录，下载</strong>Python3.10.6</strong>（也可以下载其他版本）</p><p><code>wget https://www.python.org/ftp/python/3.10.6/Python-3.10.6.tgz --no-check-certificate</code></p><p>2、解压：<code>tar -zxvf Python-3.10.6.tgz</code></p><p>3、进入<strong>python</strong>目录：<code>cd Python-3.10.6</code></p><p>4、配置<strong>Python</strong>，指定安装目录，和指定<strong>openssl</strong>目录，这是必备的，不然安装<strong>nb-cli</strong>很有可能会失败。</p><p><code>./configure --prefix=/usr/local/python3 --with-openssl=/usr/local/openssl --with-openssl-rpath=auto</code></p><p>5、编译和安装：<code>make &amp;&amp; make install</code></p><p>如果在安装的时候，提示缺少必备的库，请先安装对应的库。</p><p>然后执行<code>make clean</code>,再<code>make &amp;&amp; make install</code></p><p>6、添加环境变量</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">PATH=$PATH:$HOME/bin:/usr/local/bin</span><br><span class="line">export PATH</span><br><span class="line">source ~/.bash_profile</span><br></pre></td></tr></table></figure><p>也可以添加一个指定的别名：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">打开~/.bashrc:  vim ~/.bashrc</span><br><span class="line">添加:alias python3=&#x27;/usr/local/bin/python3&#x27;</span><br><span class="line">source ~/.bashrc</span><br></pre></td></tr></table></figure><h3 id="nonebot环境配置"><a href="#nonebot环境配置" class="headerlink" title="nonebot环境配置"></a>nonebot环境配置</h3><p>1、安装脚手架：<code>pip3 install nb-cli</code></p><p>2、创建机器人：<code>nb create</code></p><p>3、配置环境，与<strong>windows</strong>差不多</p><p>4、进入项目目录，执行：<code>python3 bot.py</code></p><p>5、如果第四步出错，根据相应错误去解决。</p><p>6、实测在<strong>windows</strong>配置好，直接传到<strong>linux</strong>有问题，需要在<strong>linux</strong>重新执行：<code>nb create</code></p><p>7、关于环境</p><p><strong>.env</strong>是指定环境，指定为<strong>dev</strong>,是开发环境，指定为<strong>prod</strong>是生产环境。</p><p>比如在<strong>dev</strong>环境下，所有的配置项都要在**.env.dev**中去修改，像端口号，超级用户和其他插件的一些配置。</p><h3 id="cq-http配置"><a href="#cq-http配置" class="headerlink" title="cq-http配置"></a>cq-http配置</h3><p>1、在<strong>windows</strong>上先配置好<strong>windows</strong>版本的机器人，主要是需要<strong>config.yml</strong>配置文件和<strong>session.token</strong>、<strong>device.json</strong></p><p>主要是设置通信方式为：<strong>反向websocker</strong></p><p><strong>config.yml</strong>中添加QQ账号和反向<strong>WS</strong>设置：<code>universal: ws://127.0.0.1:53245/onebot/v11/ws</code></p><p>这里的端口号要与<strong>nonebot</strong>环境中的端口号相同。</p><p>2、下载<strong>linux</strong>版本<strong>cq-http</strong>，下载这个：<strong>go-cqhttp_linux_amd64.tar.gz</strong></p><p>3、解压出来，放在与<strong>windows</strong>机器人同一目录，然后删除与<strong>windows</strong>相关的东西，再传到<strong>linux</strong>服务器上。</p><p>4、给<strong>linux</strong>版本的<strong>go-cqhttp</strong>添加权限，否则无法运行。</p><p><code>chmod 777 go-cqhttp</code></p><h3 id="运行机器人"><a href="#运行机器人" class="headerlink" title="运行机器人"></a>运行机器人</h3><p>分别进入到服务器中机器人项目目录和cq-http目录，一般两个目录会放在一起。</p><p>执行：<code>python3 bot.py</code> 和 <code>./go_cqhttp</code></p><p>后台运行：<code>nohup [command] &amp;</code></p><h3 id="添加插件"><a href="#添加插件" class="headerlink" title="添加插件"></a>添加插件</h3><p>1、自己开发</p><p>2、使用别人的：<a href="https://nb2.baka.icu/store">none插件商店</a></p><p>插件具体安装方法，在插件商店中可以看到。</p>]]></content>
       
       
       <categories>
           
-          <category> 软件工具 </category>
+          <category> 计算机 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> typora </tag>
+            <tag> 机器人 </tag>
             
-            <tag> github </tag>
+            <tag> centos </tag>
+            
+            <tag> 服务器 </tag>
             
         </tags>
       
@@ -81,27 +83,25 @@
     
     
     <entry>
-      <title>QQ机器人部署到服务器</title>
-      <link href="/wenzhang/QQ%E6%9C%BA%E5%99%A8%E4%BA%BA%E9%83%A8%E7%BD%B2%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
-      <url>/wenzhang/QQ%E6%9C%BA%E5%99%A8%E4%BA%BA%E9%83%A8%E7%BD%B2%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/</url>
+      <title>Typora配合github做版本管理</title>
+      <link href="/wenzhang/Typora%E9%85%8D%E5%90%88github%E6%9D%A5%E5%81%9A%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/"/>
+      <url>/wenzhang/Typora%E9%85%8D%E5%90%88github%E6%9D%A5%E5%81%9A%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/</url>
       
-        <content type="html"><![CDATA[<h3 id="QQ机器人部署到服务器"><a href="#QQ机器人部署到服务器" class="headerlink" title="QQ机器人部署到服务器"></a>QQ机器人部署到服务器</h3><p>服务器：<strong>centos7.63.10.0-1160.76.1.el7.x86_64</strong></p><p>所需环境：</p><p><strong>openssl&gt;&#x3D;1.1.1</strong></p><p><strong>python&gt;&#x3D;3.10</strong></p><h4 id="OpenSSL安装"><a href="#OpenSSL安装" class="headerlink" title="OpenSSL安装"></a>OpenSSL安装</h4><p>0、如果你的版本**&gt;&#x3D;1.1.1<strong>，则不需要安装。（版本查看：</strong>openssl version**）</p><p>1、下载<strong>openssl</strong></p><p>下载地址：<a href="https://github.com/openssl/openssl/tags">下载地址)</a></p><p>2、将下载好的文件，上传到服务器，比如我放到了 <strong>&#x2F;root&#x2F;qin&#x2F;</strong> 这个目录下</p><p>也可以直接下载：<code>wget https://www.openssl.org/source/openssl-1.1.1n.tar.gz --no-check-certificate</code></p><p>本人下载的文件名是：<strong>openssl-OpenSSL_1_1_1o.tar.gz</strong></p><p>3、解压：<code>tar -zxvf openssl-OpenSSL_1_1_1o.tar.gz</code></p><p>4、<code>cd openssl-OpenSSL </code></p><p>5、配置：<code>./config --prefix=/usr/local/openssl</code></p><p>6、编译和安装：<code>make -j &amp;&amp; make install</code></p><p>7、查看版本：<code>openssl version</code></p><p>如果版本不对，需要备份原来的，再创建软链接</p><p>8、备份：<code>mv /usr/bin/openssl /usr/bin/openssl.bak</code></p><p>9、创建<strong>openssl</strong>命令软链接：</p><p><code>ln -s /usr/local/openssl/bin/openssl /usr/bin/openssl </code></p><p><code>ldconfig</code></p><p>10、对<strong>libssl.so.1.1</strong>文件创建软链接。假如<strong>libssl.so.1.1</strong> 文件在**&#x2F;usr&#x2F;local&#x2F;openssl&#x2F;lib&#x2F;**下面，如果找不到就看看lib64有没有</p><p><code>ln -s /usr/local/openssl/lib/libssl.so.1.1 /usr/lib64/libssl.so.1.1</code></p><p><code>ln -s /usr/local/openssl/lib/libcrypto.so.1.1 /usr/lib64/libcrypto.so.1.1</code></p><p><code>ldconfig</code></p><p>11、添加环境变量，路径需要与自己系统中的相同。</p><p><code> export LD_LIBRARY_PATH=/usr/local/openssl/lib:$LD_LIBRARY_PATH</code></p><p><code>source ~/.bash_profile</code></p><p>12、再次查看版本：<code>openssl version</code></p><p>到这里，确保版本正确再进行下一步。</p><h3 id="Python安装"><a href="#Python安装" class="headerlink" title="Python安装"></a>Python安装</h3><p><strong>python</strong>环境的要求是: <strong>3.10&#x3D;&lt; verion &lt;3.11</strong></p><p>0、安装一些必备的依赖库：<code>yum install -y ncurses-devel gdbm-devel xz-devel sqlite-devel tk-devel uuid-devel readline-devel bzip2-devel libffi-devel</code></p><p><code>yum install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel libffi-devel gcc make -y</code></p><p>1、切换到 <strong>&#x2F;root&#x2F;qin&#x2F;<strong>目录，下载</strong>Python3.10.6</strong>（也可以下载其他版本）</p><p><code>wget https://www.python.org/ftp/python/3.10.6/Python-3.10.6.tgz --no-check-certificate</code></p><p>2、解压：<code>tar -zxvf Python-3.10.6.tgz</code></p><p>3、进入<strong>python</strong>目录：<code>cd Python-3.10.6</code></p><p>4、配置<strong>Python</strong>，指定安装目录，和指定<strong>openssl</strong>目录，这是必备的，不然安装<strong>nb-cli</strong>很有可能会失败。</p><p><code>./configure --prefix=/usr/local/python3 --with-openssl=/usr/local/openssl --with-openssl-rpath=auto</code></p><p>5、编译和安装：<code>make &amp;&amp; make install</code></p><p>如果在安装的时候，提示缺少必备的库，请先安装对应的库。</p><p>然后执行<code>make clean</code>,再<code>make &amp;&amp; make install</code></p><p>6、添加环境变量</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">PATH=$PATH:$HOME/bin:/usr/local/bin</span><br><span class="line">export PATH</span><br><span class="line">source ~/.bash_profile</span><br></pre></td></tr></table></figure><p>也可以添加一个指定的别名：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">打开~/.bashrc:  vim ~/.bashrc</span><br><span class="line">添加:alias python3=&#x27;/usr/local/bin/python3&#x27;</span><br><span class="line">source ~/.bashrc</span><br></pre></td></tr></table></figure><h3 id="nonebot环境配置"><a href="#nonebot环境配置" class="headerlink" title="nonebot环境配置"></a>nonebot环境配置</h3><p>1、安装脚手架：<code>pip3 install nb-cli</code></p><p>2、创建机器人：<code>nb create</code></p><p>3、配置环境，与<strong>windows</strong>差不多</p><p>4、进入项目目录，执行：<code>python3 bot.py</code></p><p>5、如果第四步出错，根据相应错误去解决。</p><p>6、实测在<strong>windows</strong>配置好，直接传到<strong>linux</strong>有问题，需要在<strong>linux</strong>重新执行：<code>nb create</code></p><p>7、关于环境</p><p><strong>.env</strong>是指定环境，指定为<strong>dev</strong>,是开发环境，指定为<strong>prod</strong>是生产环境。</p><p>比如在<strong>dev</strong>环境下，所有的配置项都要在**.env.dev**中去修改，像端口号，超级用户和其他插件的一些配置。</p><h3 id="cq-http配置"><a href="#cq-http配置" class="headerlink" title="cq-http配置"></a>cq-http配置</h3><p>1、在<strong>windows</strong>上先配置好<strong>windows</strong>版本的机器人，主要是需要<strong>config.yml</strong>配置文件和<strong>session.token</strong>、<strong>device.json</strong></p><p>主要是设置通信方式为：<strong>反向websocker</strong></p><p><strong>config.yml</strong>中添加QQ账号和反向<strong>WS</strong>设置：<code>universal: ws://127.0.0.1:53245/onebot/v11/ws</code></p><p>这里的端口号要与<strong>nonebot</strong>环境中的端口号相同。</p><p>2、下载<strong>linux</strong>版本<strong>cq-http</strong>，下载这个：<strong>go-cqhttp_linux_amd64.tar.gz</strong></p><p>3、解压出来，放在与<strong>windows</strong>机器人同一目录，然后删除与<strong>windows</strong>相关的东西，再传到<strong>linux</strong>服务器上。</p><p>4、给<strong>linux</strong>版本的<strong>go-cqhttp</strong>添加权限，否则无法运行。</p><p><code>chmod 777 go-cqhttp</code></p><h3 id="运行机器人"><a href="#运行机器人" class="headerlink" title="运行机器人"></a>运行机器人</h3><p>分别进入到服务器中机器人项目目录和cq-http目录，一般两个目录会放在一起。</p><p>执行：<code>python3 bot.py</code> 和 <code>./go_cqhttp</code></p><p>后台运行：<code>nohup [command] &amp;</code></p><h3 id="添加插件"><a href="#添加插件" class="headerlink" title="添加插件"></a>添加插件</h3><p>1、自己开发</p><p>2、使用别人的：<a href="https://nb2.baka.icu/store">none插件商店</a></p><p>插件具体安装方法，在插件商店中可以看到。</p>]]></content>
+        <content type="html"><![CDATA[<h1 id="使用github来做版本管理"><a href="#使用github来做版本管理" class="headerlink" title="使用github来做版本管理"></a>使用github来做版本管理</h1><ul><li><p>注册一个github账户，记住email和name.</p></li><li><p>下载安装一个winddows版本的git：<a href="https://gitforwindows.org/">Git for Windows</a></p><h2 id="配置本机的公钥和私钥"><a href="#配置本机的公钥和私钥" class="headerlink" title="配置本机的公钥和私钥"></a>配置本机的公钥和私钥</h2></li><li><p>在用户目录下新建一个 <strong>.ssh</strong> 目录，进入**.ssh** ,右键点击：<code>Git Bash Here</code></p></li><li><p>执行：<code>ssh-keygen -t rsa</code> 并按回车。(如果提示没有ssh-keygen命令，可以在系统设置中添加可选功能，把openssh客户端和服务端一起安装。)</p></li><li><p>执行完成之后，会在.ssh 目录下生成两个文件。<code>id_rsa,id_rsa_pub</code>.其中<code>id_rsa.pub</code>是公钥</p></li><li><p>打开github的设置，选择<code>SSH Keys</code>，添加一个<code>new SSH key</code>,输入<code>id_rsa.pub</code>中的内容。</p></li><li><p>打开要保存在github的笔记仓库（没有就新建一个），复制SSH链接。</p></li></ul><h2 id="远端与本地的同步"><a href="#远端与本地的同步" class="headerlink" title="远端与本地的同步"></a>远端与本地的同步</h2><ul><li>在本地新建一个文件夹，用来同步github。进入文件夹执行 <code>Git Bash Here</code></li><li>拉取到本地，输入 <code>git clone ssh链接</code>  ssh链接就是上一步复制的链接</li><li>进入有.git的新生成的文件夹，这里就可以创建树状结构的文件目录了。</li></ul><h2 id="本地提交到github"><a href="#本地提交到github" class="headerlink" title="本地提交到github"></a>本地提交到github</h2><ul><li><p>进入到有.github的文件夹，执行 <code>Git Bash Here</code> </p></li><li><p>添加全部新文件 <code>git add .</code> 也可以手动指定添加哪些文件</p></li><li><p>提交：<code>git commit -m &quot;描述&quot;</code></p></li><li><p>如果在提交这一步出错，需要设置一下githhub账户的邮箱和名字。</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.email &quot;you@example.com&quot;</span><br><span class="line">git config --global user.name &quot;Your Name&quot;</span><br></pre></td></tr></table></figure><p>设置好后，再次提交就行了。</p></li><li><p>Push到github</p><p><code>git push</code></p></li></ul><p>到此，同步设置已经完成了。</p>]]></content>
       
       
       <categories>
           
-          <category> 计算机 </category>
+          <category> 软件工具 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 机器人 </tag>
+            <tag> typora </tag>
             
-            <tag> centos </tag>
-            
-            <tag> 服务器 </tag>
+            <tag> github </tag>
             
         </tags>
       
@@ -162,11 +162,11 @@
     
     
     <entry>
-      <title>将markdown转为html</title>
-      <link href="/wenzhang/%E5%B0%86markdown%E8%BD%AC%E4%B8%BAhtml/"/>
-      <url>/wenzhang/%E5%B0%86markdown%E8%BD%AC%E4%B8%BAhtml/</url>
+      <title>通过CloudFlare配置图床</title>
+      <link href="/wenzhang/%E4%BD%BF%E7%94%A8cloudflare%E9%85%8D%E7%BD%AE%E5%9B%BE%E5%BA%8A/"/>
+      <url>/wenzhang/%E4%BD%BF%E7%94%A8cloudflare%E9%85%8D%E7%BD%AE%E5%9B%BE%E5%BA%8A/</url>
       
-        <content type="html"><![CDATA[<h2 id="使用npm的i5ting-toc插件把md文档转换为html文件"><a href="#使用npm的i5ting-toc插件把md文档转换为html文件" class="headerlink" title="使用npm的i5ting_toc插件把md文档转换为html文件"></a>使用npm的i5ting_toc插件把md文档转换为html文件</h2><p><strong>第一步</strong>、安装npm,（安装node.js会自带npm）</p><p><strong>第二步</strong>、执行安装命令： <strong>npm install i5ting_toc -g</strong> </p><p><strong>第三步</strong>、在md文档所在目录，用PowerShell打开，输入：</p><p><strong><code>i5ting_toc.cmd -f &lt;要转换的文档.md&gt;</code></strong></p><p>执行完成后，在文档所在目录，会生成<strong>preview</strong>文件夹，转换后的<strong>html</strong>文件就在这个文件夹内</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>之前用picgo来设置github图床，但是总是出现上传图片失败的情况，下面介绍另外一种配置图床的方式。</p><p>这种方式就是用cloudflare + github仓库</p><h2 id="第一步、注册cloudflare"><a href="#第一步、注册cloudflare" class="headerlink" title="第一步、注册cloudflare"></a>第一步、注册cloudflare</h2><p>官网地址：<a href="https://cloudflare.com/">https://cloudflare.com</a></p><p>注册过程很简单就不介绍了，用邮箱注册就行了。注册完成后，登录上去。</p><h2 id="第二步、与git仓库建立连接"><a href="#第二步、与git仓库建立连接" class="headerlink" title="第二步、与git仓库建立连接"></a>第二步、与git仓库建立连接</h2><p>1、点击Workers和Pages页面</p><p><img src="https://picgo.symbol.cloudns.be/img/add-app.png"></p><p>2、点击创建应用程序，再点击Pages，然后连接到Git</p><p><img src="https://picgo.symbol.cloudns.be/img/connect-git.png"></p><p>3、添加GitHub账户和选择仓库</p><p>如果没有，就需要提前注册和创建</p><p><img src="https://picgo.symbol.cloudns.be/img/world.png"></p><p>选择仓库后，点配置，等几分钟就能自动配置完成了，到这一步设置部分就完成了，接下来就是访问了。</p><p>4、访问图片外链URL</p><p><img src="https://picgo.symbol.cloudns.be/img/page.png"></p><p>点击访问站点，可以访问到自己在cloudflare上的位置，但此时无法访问到对应的图片，因为要加上图片路径才能访问。</p><p>比如示例中图片是存放在PicGo仓库，PicGo仓库中有个img文件夹，所有图片都放在这个文件夹内。</p><p><img src="https://picgo.symbol.cloudns.be/img/img-test.png"></p><p>所以正确访问方式就是：<code>&lt;自己的站点 + 图片的路径&gt;</code></p><p>比如我想访问img文件夹下面的1.png，那么URL就是：<code>&lt;https://picgo.symbol.cloudns.be/img/1.png&gt;</code></p><p>5、新增图片</p><p>后续只需要将图片放到github仓库中，cloudflare会自动同步过去。如果发现没有同步过去，只需要等一分钟左右就好了，同步要也时间。有了图片外链，写文档，写博客就方便很多啦。</p>]]></content>
       
       
       <categories>
@@ -178,7 +178,7 @@
       
         <tags>
             
-            <tag> markdown </tag>
+            <tag> CF </tag>
             
         </tags>
       
@@ -187,23 +187,23 @@
     
     
     <entry>
-      <title>通过Alist将过网盘挂载到本地</title>
-      <link href="/wenzhang/%E5%B0%86%E7%BD%91%E7%9B%98%E6%8C%82%E8%BD%BD%E5%88%B0%E6%9C%AC%E5%9C%B0/"/>
-      <url>/wenzhang/%E5%B0%86%E7%BD%91%E7%9B%98%E6%8C%82%E8%BD%BD%E5%88%B0%E6%9C%AC%E5%9C%B0/</url>
+      <title>一些常见的问题的回答</title>
+      <link href="/wenzhang/%E5%85%B3%E4%BA%8E%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%E7%9A%84%E5%9B%9E%E7%AD%94/"/>
+      <url>/wenzhang/%E5%85%B3%E4%BA%8E%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%E7%9A%84%E5%9B%9E%E7%AD%94/</url>
       
-        <content type="html"><![CDATA[<h2 id="为什么要将网盘挂载到本地"><a href="#为什么要将网盘挂载到本地" class="headerlink" title="为什么要将网盘挂载到本地"></a>为什么要将网盘挂载到本地</h2><p>将网盘挂载到本地的好处：</p><p>访问网盘就像访问本地文件夹一样方便，网盘上的文件无需下载就能直接访问。比如mp4视频，直接可以用电脑上的播放器打开。比如office安装包，直接安装，无需下载。用一句话总结就是：将网盘变成本地硬盘。</p><h2 id="如何挂载"><a href="#如何挂载" class="headerlink" title="如何挂载"></a>如何挂载</h2><p>需要用到两个软件：Alist 和 RaiDrive</p><p>Alist负责将网盘上的文件，映射到本地某个端口，可以用浏览器访问。</p><p>RaiDrive负责本该是浏览器访问的网盘，映射到本地，可以在本地直接访问。</p><p>注意点：Alist 和 RaiDrive这两个软件，需要打开，才能正常使用，如果关闭，则不能访问。 </p><p>软件安装包：</p><p>蓝奏云：<a href="https://wws.lanzoul.com/iDuTi0dq77ji">https://wws.lanzoul.com/iDuTi0dq77ji</a><br>                密码:7027</p><hr><p>百度网盘： <a href="https://pan.baidu.com/s/1RY6QnQS9Y1FlsntWCa3Cww?pwd=4wyn">https://pan.baidu.com/s/1RY6QnQS9Y1FlsntWCa3Cww?pwd=4wyn</a> </p><p>提取码: 4wyn </p><h2 id="可以挂载哪些网盘"><a href="#可以挂载哪些网盘" class="headerlink" title="可以挂载哪些网盘"></a>可以挂载哪些网盘</h2><p>支持的网盘：百度网盘，阿里云盘，OneDrive，天翼云盘，蓝奏云，123云盘，谷歌云盘，夸克网盘，迅雷网盘等等。</p><p>支持的非常多，一定支持你要挂载的云盘。</p><h2 id="安装软件"><a href="#安装软件" class="headerlink" title="安装软件"></a>安装软件</h2><p>将下载好的RaiDrive进行安装，安装过程中，需要一些库的支持，一并安装就好了。</p><p>Alist不需要安装，直接以管理员的身份运行即可。</p><h2 id="第一步、运行Alist"><a href="#第一步、运行Alist" class="headerlink" title="第一步、运行Alist"></a>第一步、运行Alist</h2><p>右键以管理员的身份运行</p><p><img src="https://picgo.symbol.cloudns.be/img/alist%E9%A1%B5%E9%9D%A2.png"></p><p>并记住初始登录密码，等下登录需要用到。</p><p>在浏览器输入下面网址，访问Alist后台。</p><p><strong><a href="http://127.0.0.1:5244/">http://127.0.0.1:5244</a></strong></p><p>首次登录需要密码，填入刚才记录的初始密码。</p><h2 id="第二步、设置Alist"><a href="#第二步、设置Alist" class="headerlink" title="第二步、设置Alist"></a>第二步、设置Alist</h2><p>进入后台，显示的页面如下</p><p><img src="https://picgo.symbol.cloudns.be/img/Alist%E9%A1%B5%E9%9D%A22.png"></p><p>点击左边的账号，再点击添加。</p><h6 id="添加的时候，选择一个网盘，比如选择阿里云盘。虚拟路径，填写一个电脑上没有的盘符，比如：E，F，G，H，I等等都可以。不要填本地电脑上已有的盘符。"><a href="#添加的时候，选择一个网盘，比如选择阿里云盘。虚拟路径，填写一个电脑上没有的盘符，比如：E，F，G，H，I等等都可以。不要填本地电脑上已有的盘符。" class="headerlink" title="添加的时候，选择一个网盘，比如选择阿里云盘。虚拟路径，填写一个电脑上没有的盘符，比如：E，F，G，H，I等等都可以。不要填本地电脑上已有的盘符。"></a>添加的时候，选择一个网盘，比如选择阿里云盘。虚拟路径，填写一个电脑上没有的盘符，比如：E，F，G，H，I等等都可以。不要填本地电脑上已有的盘符。</h6><p><img src="https://picgo.symbol.cloudns.be/img/%E4%BB%A4%E7%89%8C.png"></p><p>添加的时候，重点是要获得到一个令牌。</p><p>访问Alist官方文档，查看获取令牌的方法：</p><p><strong><a href="https://alist-doc.nn.ci/docs/driver/aliyundrive/">https://alist-doc.nn.ci/docs/driver/aliyundrive/</a></strong></p><p>点击<strong>Get Token</strong></p><p><img src="https://picgo.symbol.cloudns.be/img/%E8%8E%B7%E5%BE%97%E4%BB%A4%E7%89%8C.png"></p><p>不同网盘获取令牌的方式可能略有不同，阿里云盘需要用手机端App扫码。</p><p>总之能获得到就行，这里的令牌，相当于是要绑定自己的账号，如此才能访问到自己的网盘。</p><p>复制到令牌后，粘贴到上上图中刷新令牌的位置。然后点击保存即可。</p><p>到这一步就添加好了，可以通过浏览器来访问自己的网盘了。</p><p>打开：<code>http://127.0.0.1:5244</code></p><p>这一步要能访问到自己的网盘，再进行下一步。下一步就是设置在本地访问网盘中的文件。</p><h2 id="第三步、运行RaiDrive"><a href="#第三步、运行RaiDrive" class="headerlink" title="第三步、运行RaiDrive"></a>第三步、运行RaiDrive</h2><p>添加 <code>+Add</code>，添加一个网盘，然后填写配置。</p><p><img src="https://picgo.symbol.cloudns.be/img/rai.jpg"></p><p>图片中的 Account，如果是中文，则会显示账户。</p><p>这里填写自己Alist后台中的 </p><p><code>WebDav username和WebDav password</code></p><p>每个人都是不一样的。</p><p>最后点击<strong>连接</strong>就行了。</p><p>至此大功告成了，就可以在自己的电脑上访问网盘中的内容了。</p><p><img src="https://picgo.symbol.cloudns.be/img/OK.png"></p><h3 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h3><p>一、<strong>只有Alist和RaiDrive运行，才能正常访问。并且是先以管理员身份运行Alist,再运行Raidrive</strong></p><p>二、当需要访问网盘的时候，运行即可，如果网盘中文件太多，同步网盘可以需要花点时间。</p><p>三、电脑必须连上网，才能正常映射。自己的电脑如果没网，也是访问不到网盘的，这是同一个道理。</p><p>四、其他网盘的添加方法类似，就是在添加时改一下网盘类型，虚拟路径不要重复，然后获取到令牌即可。</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="一些常见的问题的回答"><a href="#一些常见的问题的回答" class="headerlink" title="一些常见的问题的回答"></a>一些常见的问题的回答</h2><h3 id="一、科学上网是什么？怎么科学上网？"><a href="#一、科学上网是什么？怎么科学上网？" class="headerlink" title="一、科学上网是什么？怎么科学上网？"></a>一、科学上网是什么？怎么科学上网？</h3><p>科学上网就是通过技术手段，来访问被国家防火墙封禁的网站，比如google,youtube,chatgpt等等</p><p>科学上网又叫翻墙，梯子，VPN等等</p><p>可以下载“学习资料”这个文件夹来还原教学视频</p><p><img src="https://picgo.symbol.cloudns.be/img/qunwenjian.png"></p><p>所有文件下载后，双击 <strong>merge.bat</strong> 即可还原出教学视频，详细请看文件夹里面的“使用说明.txt”</p><h3 id="二、科学上网的原理是什么？"><a href="#二、科学上网的原理是什么？" class="headerlink" title="二、科学上网的原理是什么？"></a>二、科学上网的原理是什么？</h3><p>想要实现科学上网，需要一台境外的服务器，我们连接这台服务器，让它帮我们完成上网的请求。</p><p>为了获取到境外的服务器，我们需要到机场购买订阅，购买了订阅相当于获取到了服务器。</p><p>通常订阅是由多个节点组成，每一个节点就是一台境外的服务器。</p><p>有了服务器之后，我们还需要一个工具来实现手机&#x2F;电脑与服务器的连接，这个工具就是代理工具。</p><p>所以，想要科学上网，要先打开代理工具，让代理工具充当手机&#x2F;电脑与境外服务器的桥梁。</p><p>群主在用的机场：</p><p><a href="https://69yun69.com/auth/register?code=FgLs3v">69云(需要梯子)</a></p><p><a href="https://china.69yun69.com/auth/register?code=FgLs3v">69云(不需要梯子)</a></p><p><a href="https://www.bygcloud.com/#/register?code=xLb66O97">白月光(不需要梯子)</a></p><p><a href="https://llgjc1.com/#/register?code=M6sTouG7">流量光(需要梯子)</a></p><p>具体怎么使用，小白朋友请看群里的教学视频</p><p>科学上网的原理很复杂，了解个大概就行了</p><p>因为机场有很多，不同平台用的代理工具不同，翻墙的协议也有很多，不同的代理工具支持的协议也不同，喜欢研究的朋友可以自行研究或者与群主讨论。</p><p><strong>福利：</strong></p><p><strong>如果使用69云机场，购买了16.8元&#x2F;50G那个套餐，即演示视频中所购买的套餐</strong><br><strong>可以在Q群联系我部署自动签到(需要发送账号密码)</strong></p><h3 id="三、Emby是什么？怎么获取Emby账号？"><a href="#三、Emby是什么？怎么获取Emby账号？" class="headerlink" title="三、Emby是什么？怎么获取Emby账号？"></a>三、Emby是什么？怎么获取Emby账号？</h3><p>Emby是一个视频平台，由客户端和服务器组成，通常服务器由别人搭建好，我们花钱购买账号。</p><p>它可以观看最新的爱优腾芒最新的剧集，奈飞迪士尼等，通常最新的剧集比上线时间慢两个小时左右。</p><p>比如腾讯晚上6点更新VIP视频，那么在晚上8点左右能看到。</p><p>Emby支持全平台，客户端也非常多</p><p><strong>69云机场的emby支持苹果客户端如下：</strong></p><p><img src="https://picgo.symbol.cloudns.be/img/emby-ap.jpg"></p><p><strong>69云机场的emby支持安卓和windows客户端如下：</strong></p><p><img src="https://picgo.symbol.cloudns.be/img/emby-ad.jpg"></p><p><strong>我提供了安卓和windows平台的客户端</strong></p><p><a href="https://pan.baidu.com/s/1u1JZnYlTOpr4P0_GpOcQkw?pwd=bqdf">百度网盘</a></p><p><strong>如何获取账号呢？</strong></p><p>如果你购买了69云的机场订阅，那么你就拥有了一个emby账号。</p><p>众所周知，客户端要连接emby服务器，需要两个参数。一个是IP地址或者域名，它对应着服务器；一个是端口，它对应着服务器上运行的服务。就是说要连接emby服务器，需要域名加上端口才能连接成功。</p><p><strong>有些客户端域名和端口是写在一起的，有些则是分开的，注意观察。</strong></p><p>以连接69云为例，客户端是我提供的安卓的<strong>Afusekt</strong></p><p><img src="https://picgo.symbol.cloudns.be/img/afusekt.jpg"></p><p>把它提供的连接地址复制到地址那一栏：<a href="http://emby.69yun69.com:18690/">http://emby.69yun69.com:18690</a></p><p>协议和端口自动识别了，不用管。账号就填写<strong>注册69云的邮箱</strong>；密码<strong>不用填</strong>；备注<strong>随便填写，不填也行</strong>。</p><p>其它客户端也一样，就是要注意域名和端口是否要分开填写。</p><h5 id="观看emby是否要科学上网？"><a href="#观看emby是否要科学上网？" class="headerlink" title="观看emby是否要科学上网？"></a>观看emby是否要科学上网？</h5><p>这得看影视的存储位置，如果是在国内，一般不需要，如果是在国外，一般需要。所以购买的时候，必须了解清楚。</p><p>69云的这个DPX是不用科学上网的。但是它的<strong>50万+ 资源服</strong>和<strong>教学服</strong>建议开启科学上网。</p><p><strong>还有哪些地方可以购买emby？</strong></p><p>可以去闲鱼搜索emby关键字</p><p>也可以去影视站，比如：<a href="https://blackcatfilm.cc/">黑猫emby</a>，<a href="https://mooguu.org/">蘑菇emby</a> 等等</p><p>或者像69云一样的emby机场，有很多，这个得靠自己去google了</p><p>群主只负责告诉大家有哪些可以购买emby的地方，具体的风险需要自己承担。</p><h3 id="四、不想用付费的emby，有免费看剧集的地方吗？"><a href="#四、不想用付费的emby，有免费看剧集的地方吗？" class="headerlink" title="四、不想用付费的emby，有免费看剧集的地方吗？"></a>四、不想用付费的emby，有免费看剧集的地方吗？</h3><p>当然有，而且还非常多，但是会有广告。如果大家点击广告，造成的损失，需要自己承担。</p><p>点击下面链接，寻找适合自己的。</p><p><a href="https://linux.do/t/topic/434836">影视站分享合集</a></p><p>我也推荐一个安卓APP</p><p><a href="https://pan.baidu.com/s/1CvNTGwLTETJRcStv4IMSNQ?pwd=kk6c">百度网盘-网飞猫</a></p><p>这些网站&#x2F;APP也能看爱优腾芒VIP和奈飞迪士尼的视频，唯一的缺点就是有广告。</p><h3 id="五、我是个爱学习的人，有免费找学习资源的地方吗？"><a href="#五、我是个爱学习的人，有免费找学习资源的地方吗？" class="headerlink" title="五、我是个爱学习的人，有免费找学习资源的地方吗？"></a>五、我是个爱学习的人，有免费找学习资源的地方吗？</h3><p>有的，也非常多，我分享两个压压惊</p><p>一、<a href="https://linux.do/">L站</a></p><p>二、<a href="https://wpfx.org.cn/">网盘分享</a></p><p>如果你要的资料在上面两个网站找不到，可以在群里@群主帮助找。</p><p>一定要自己先在上面两个网站找，直接做伸手党，群主是不会理人的。</p><h3 id="六、如何使用电报-TG-推特-X-Instagram-TikTok等外国软件？"><a href="#六、如何使用电报-TG-推特-X-Instagram-TikTok等外国软件？" class="headerlink" title="六、如何使用电报(TG),推特(X),Instagram,TikTok等外国软件？"></a>六、如何使用电报(TG),推特(X),Instagram,TikTok等外国软件？</h3><p>首先得有一个稳定的科学上网环境，建议使用代理工具+机场的方式，不建议直接使用某某VPN。</p><p>这些软件的使用有不同的限制，先去youtube上了解。</p><p>如果跟着别人的演示视频不成功，可在群里与群主讨论。</p><p><a href="https://telegram.org/">TG官网</a></p><p><a href="https://x.com/">推特官网</a></p><p><a href="https://www.instagram.com/">Instagram官网</a></p><p><a href="https://www.tiktok.com/">TikTok官网</a></p><h3 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h3><p>我只是帮助大家打开一扇窗，窗外的风景很丰富，需要大家自己去发现。</p><p>最后留一句话送给大家：</p><p><strong>在互联网的世界里，当你知道的越多，你不知道的也就越多。</strong></p>]]></content>
       
       
       <categories>
           
-          <category> 软件工具 </category>
+          <category> 互联网 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> Alist </tag>
+            <tag> 学习 </tag>
             
         </tags>
       
@@ -237,36 +237,11 @@
     
     
     <entry>
-      <title>常用CMD命令</title>
-      <link href="/wenzhang/%E5%B8%B8%E7%94%A8CMD%E5%91%BD%E4%BB%A4/"/>
-      <url>/wenzhang/%E5%B8%B8%E7%94%A8CMD%E5%91%BD%E4%BB%A4/</url>
+      <title>将markdown转为html</title>
+      <link href="/wenzhang/%E5%B0%86markdown%E8%BD%AC%E4%B8%BAhtml/"/>
+      <url>/wenzhang/%E5%B0%86markdown%E8%BD%AC%E4%B8%BAhtml/</url>
       
-        <content type="html"><![CDATA[<p>测试网络连通情况：</p><p><code>ping IP地址</code></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ping 参数：</span><br><span class="line">-l 数据包大小</span><br><span class="line">-t 一直ping</span><br><span class="line">-n ping 的次数</span><br></pre></td></tr></table></figure><p>查看路由追踪表：</p><p><code>tracert IP</code></p><p>比如：<code>tracert www.baidu.com</code></p><p>打开系统引导项：</p><p><code>msconfig</code></p><p>查看本机IP地址：</p><p><code>ipconfig</code></p><p><code>ipconfig /all</code></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">netsh 简单使用</span><br><span class="line">查看连接过和wifi密码：</span><br><span class="line">CMD下输入netsh,回车，</span><br><span class="line">列举连接过的wifi：wlan show profiles</span><br><span class="line">查看某个wifi密码：wlan show profiles &quot;wifi名称&quot; key=clear</span><br><span class="line">--------------------------</span><br><span class="line">静态IP和动态IP随时切换</span><br><span class="line">建立一个static.cmd文件，用文件保存的好处是可以一次性更改。</span><br><span class="line">static.cmd写入：</span><br><span class="line">netsh interface ip set address &quot;要修改的网卡名称&quot; static 192.168.0.100 255.255.255.0 192.168.0.1 1</span><br><span class="line">建立dhcp.cmd 写入：</span><br><span class="line">netsh interface ip set address &quot;要修改的网卡名称&quot; dhcp </span><br><span class="line">ipconfig /release</span><br><span class="line">ipconfig /renew</span><br><span class="line">双击运行即可。</span><br></pre></td></tr></table></figure><p>跳转特定目录：</p><p><code>先进入要跳转的目录，在路径栏上直接输入 cmd 即可</code></p><p>打开记事本：</p><p><code>notepad</code></p><p>打开画图：</p><p><code>mspaint</code></p><p>打开计算器：</p><p><code>calc</code></p><p>打开字符映射表：</p><p><code>charmap</code></p><p>打开注册表</p><p><code>regedit.exe</code></p><p>查看windows版本</p><p><code>winver</code></p><p>打开控制面板</p><p><code>control</code></p><p>打开DVD播放器：</p><p><code>dvdplay</code></p><p>exe程序开机自启动：</p><p>win+R,输入：</p><p><code>shell:startup</code></p><p>将快捷方式或者文件放进去即可。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 计算机 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> CMD命令 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>通过CloudFlare配置图床</title>
-      <link href="/wenzhang/%E4%BD%BF%E7%94%A8cloudflare%E9%85%8D%E7%BD%AE%E5%9B%BE%E5%BA%8A/"/>
-      <url>/wenzhang/%E4%BD%BF%E7%94%A8cloudflare%E9%85%8D%E7%BD%AE%E5%9B%BE%E5%BA%8A/</url>
-      
-        <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>之前用picgo来设置github图床，但是总是出现上传图片失败的情况，下面介绍另外一种配置图床的方式。</p><p>这种方式就是用cloudflare + github仓库</p><h2 id="第一步、注册cloudflare"><a href="#第一步、注册cloudflare" class="headerlink" title="第一步、注册cloudflare"></a>第一步、注册cloudflare</h2><p>官网地址：<a href="https://cloudflare.com/">https://cloudflare.com</a></p><p>注册过程很简单就不介绍了，用邮箱注册就行了。注册完成后，登录上去。</p><h2 id="第二步、与git仓库建立连接"><a href="#第二步、与git仓库建立连接" class="headerlink" title="第二步、与git仓库建立连接"></a>第二步、与git仓库建立连接</h2><p>1、点击Workers和Pages页面</p><p><img src="https://picgo.symbol.cloudns.be/img/add-app.png"></p><p>2、点击创建应用程序，再点击Pages，然后连接到Git</p><p><img src="https://picgo.symbol.cloudns.be/img/connect-git.png"></p><p>3、添加GitHub账户和选择仓库</p><p>如果没有，就需要提前注册和创建</p><p><img src="https://picgo.symbol.cloudns.be/img/world.png"></p><p>选择仓库后，点配置，等几分钟就能自动配置完成了，到这一步设置部分就完成了，接下来就是访问了。</p><p>4、访问图片外链URL</p><p><img src="https://picgo.symbol.cloudns.be/img/page.png"></p><p>点击访问站点，可以访问到自己在cloudflare上的位置，但此时无法访问到对应的图片，因为要加上图片路径才能访问。</p><p>比如示例中图片是存放在PicGo仓库，PicGo仓库中有个img文件夹，所有图片都放在这个文件夹内。</p><p><img src="https://picgo.symbol.cloudns.be/img/img-test.png"></p><p>所以正确访问方式就是：<code>&lt;自己的站点 + 图片的路径&gt;</code></p><p>比如我想访问img文件夹下面的1.png，那么URL就是：<code>&lt;https://picgo.symbol.cloudns.be/img/1.png&gt;</code></p><p>5、新增图片</p><p>后续只需要将图片放到github仓库中，cloudflare会自动同步过去。如果发现没有同步过去，只需要等一分钟左右就好了，同步要也时间。有了图片外链，写文档，写博客就方便很多啦。</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="使用npm的i5ting-toc插件把md文档转换为html文件"><a href="#使用npm的i5ting-toc插件把md文档转换为html文件" class="headerlink" title="使用npm的i5ting_toc插件把md文档转换为html文件"></a>使用npm的i5ting_toc插件把md文档转换为html文件</h2><p><strong>第一步</strong>、安装npm,（安装node.js会自带npm）</p><p><strong>第二步</strong>、执行安装命令： <strong>npm install i5ting_toc -g</strong> </p><p><strong>第三步</strong>、在md文档所在目录，用PowerShell打开，输入：</p><p><strong><code>i5ting_toc.cmd -f &lt;要转换的文档.md&gt;</code></strong></p><p>执行完成后，在文档所在目录，会生成<strong>preview</strong>文件夹，转换后的<strong>html</strong>文件就在这个文件夹内</p>]]></content>
       
       
       <categories>
@@ -278,7 +253,7 @@
       
         <tags>
             
-            <tag> CF </tag>
+            <tag> markdown </tag>
             
         </tags>
       
@@ -329,6 +304,56 @@
         <tags>
             
             <tag> 计算机 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>通过Alist将过网盘挂载到本地</title>
+      <link href="/wenzhang/%E5%B0%86%E7%BD%91%E7%9B%98%E6%8C%82%E8%BD%BD%E5%88%B0%E6%9C%AC%E5%9C%B0/"/>
+      <url>/wenzhang/%E5%B0%86%E7%BD%91%E7%9B%98%E6%8C%82%E8%BD%BD%E5%88%B0%E6%9C%AC%E5%9C%B0/</url>
+      
+        <content type="html"><![CDATA[<h2 id="为什么要将网盘挂载到本地"><a href="#为什么要将网盘挂载到本地" class="headerlink" title="为什么要将网盘挂载到本地"></a>为什么要将网盘挂载到本地</h2><p>将网盘挂载到本地的好处：</p><p>访问网盘就像访问本地文件夹一样方便，网盘上的文件无需下载就能直接访问。比如mp4视频，直接可以用电脑上的播放器打开。比如office安装包，直接安装，无需下载。用一句话总结就是：将网盘变成本地硬盘。</p><h2 id="如何挂载"><a href="#如何挂载" class="headerlink" title="如何挂载"></a>如何挂载</h2><p>需要用到两个软件：Alist 和 RaiDrive</p><p>Alist负责将网盘上的文件，映射到本地某个端口，可以用浏览器访问。</p><p>RaiDrive负责本该是浏览器访问的网盘，映射到本地，可以在本地直接访问。</p><p>注意点：Alist 和 RaiDrive这两个软件，需要打开，才能正常使用，如果关闭，则不能访问。 </p><p>软件安装包：</p><p>蓝奏云：<a href="https://wws.lanzoul.com/iDuTi0dq77ji">https://wws.lanzoul.com/iDuTi0dq77ji</a><br>                密码:7027</p><hr><p>百度网盘： <a href="https://pan.baidu.com/s/1RY6QnQS9Y1FlsntWCa3Cww?pwd=4wyn">https://pan.baidu.com/s/1RY6QnQS9Y1FlsntWCa3Cww?pwd=4wyn</a> </p><p>提取码: 4wyn </p><h2 id="可以挂载哪些网盘"><a href="#可以挂载哪些网盘" class="headerlink" title="可以挂载哪些网盘"></a>可以挂载哪些网盘</h2><p>支持的网盘：百度网盘，阿里云盘，OneDrive，天翼云盘，蓝奏云，123云盘，谷歌云盘，夸克网盘，迅雷网盘等等。</p><p>支持的非常多，一定支持你要挂载的云盘。</p><h2 id="安装软件"><a href="#安装软件" class="headerlink" title="安装软件"></a>安装软件</h2><p>将下载好的RaiDrive进行安装，安装过程中，需要一些库的支持，一并安装就好了。</p><p>Alist不需要安装，直接以管理员的身份运行即可。</p><h2 id="第一步、运行Alist"><a href="#第一步、运行Alist" class="headerlink" title="第一步、运行Alist"></a>第一步、运行Alist</h2><p>右键以管理员的身份运行</p><p><img src="https://picgo.symbol.cloudns.be/img/alist%E9%A1%B5%E9%9D%A2.png"></p><p>并记住初始登录密码，等下登录需要用到。</p><p>在浏览器输入下面网址，访问Alist后台。</p><p><strong><a href="http://127.0.0.1:5244/">http://127.0.0.1:5244</a></strong></p><p>首次登录需要密码，填入刚才记录的初始密码。</p><h2 id="第二步、设置Alist"><a href="#第二步、设置Alist" class="headerlink" title="第二步、设置Alist"></a>第二步、设置Alist</h2><p>进入后台，显示的页面如下</p><p><img src="https://picgo.symbol.cloudns.be/img/Alist%E9%A1%B5%E9%9D%A22.png"></p><p>点击左边的账号，再点击添加。</p><h6 id="添加的时候，选择一个网盘，比如选择阿里云盘。虚拟路径，填写一个电脑上没有的盘符，比如：E，F，G，H，I等等都可以。不要填本地电脑上已有的盘符。"><a href="#添加的时候，选择一个网盘，比如选择阿里云盘。虚拟路径，填写一个电脑上没有的盘符，比如：E，F，G，H，I等等都可以。不要填本地电脑上已有的盘符。" class="headerlink" title="添加的时候，选择一个网盘，比如选择阿里云盘。虚拟路径，填写一个电脑上没有的盘符，比如：E，F，G，H，I等等都可以。不要填本地电脑上已有的盘符。"></a>添加的时候，选择一个网盘，比如选择阿里云盘。虚拟路径，填写一个电脑上没有的盘符，比如：E，F，G，H，I等等都可以。不要填本地电脑上已有的盘符。</h6><p><img src="https://picgo.symbol.cloudns.be/img/%E4%BB%A4%E7%89%8C.png"></p><p>添加的时候，重点是要获得到一个令牌。</p><p>访问Alist官方文档，查看获取令牌的方法：</p><p><strong><a href="https://alist-doc.nn.ci/docs/driver/aliyundrive/">https://alist-doc.nn.ci/docs/driver/aliyundrive/</a></strong></p><p>点击<strong>Get Token</strong></p><p><img src="https://picgo.symbol.cloudns.be/img/%E8%8E%B7%E5%BE%97%E4%BB%A4%E7%89%8C.png"></p><p>不同网盘获取令牌的方式可能略有不同，阿里云盘需要用手机端App扫码。</p><p>总之能获得到就行，这里的令牌，相当于是要绑定自己的账号，如此才能访问到自己的网盘。</p><p>复制到令牌后，粘贴到上上图中刷新令牌的位置。然后点击保存即可。</p><p>到这一步就添加好了，可以通过浏览器来访问自己的网盘了。</p><p>打开：<code>http://127.0.0.1:5244</code></p><p>这一步要能访问到自己的网盘，再进行下一步。下一步就是设置在本地访问网盘中的文件。</p><h2 id="第三步、运行RaiDrive"><a href="#第三步、运行RaiDrive" class="headerlink" title="第三步、运行RaiDrive"></a>第三步、运行RaiDrive</h2><p>添加 <code>+Add</code>，添加一个网盘，然后填写配置。</p><p><img src="https://picgo.symbol.cloudns.be/img/rai.jpg"></p><p>图片中的 Account，如果是中文，则会显示账户。</p><p>这里填写自己Alist后台中的 </p><p><code>WebDav username和WebDav password</code></p><p>每个人都是不一样的。</p><p>最后点击<strong>连接</strong>就行了。</p><p>至此大功告成了，就可以在自己的电脑上访问网盘中的内容了。</p><p><img src="https://picgo.symbol.cloudns.be/img/OK.png"></p><h3 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h3><p>一、<strong>只有Alist和RaiDrive运行，才能正常访问。并且是先以管理员身份运行Alist,再运行Raidrive</strong></p><p>二、当需要访问网盘的时候，运行即可，如果网盘中文件太多，同步网盘可以需要花点时间。</p><p>三、电脑必须连上网，才能正常映射。自己的电脑如果没网，也是访问不到网盘的，这是同一个道理。</p><p>四、其他网盘的添加方法类似，就是在添加时改一下网盘类型，虚拟路径不要重复，然后获取到令牌即可。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 软件工具 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Alist </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>常用CMD命令</title>
+      <link href="/wenzhang/%E5%B8%B8%E7%94%A8CMD%E5%91%BD%E4%BB%A4/"/>
+      <url>/wenzhang/%E5%B8%B8%E7%94%A8CMD%E5%91%BD%E4%BB%A4/</url>
+      
+        <content type="html"><![CDATA[<p>测试网络连通情况：</p><p><code>ping IP地址</code></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ping 参数：</span><br><span class="line">-l 数据包大小</span><br><span class="line">-t 一直ping</span><br><span class="line">-n ping 的次数</span><br></pre></td></tr></table></figure><p>查看路由追踪表：</p><p><code>tracert IP</code></p><p>比如：<code>tracert www.baidu.com</code></p><p>打开系统引导项：</p><p><code>msconfig</code></p><p>查看本机IP地址：</p><p><code>ipconfig</code></p><p><code>ipconfig /all</code></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">netsh 简单使用</span><br><span class="line">查看连接过和wifi密码：</span><br><span class="line">CMD下输入netsh,回车，</span><br><span class="line">列举连接过的wifi：wlan show profiles</span><br><span class="line">查看某个wifi密码：wlan show profiles &quot;wifi名称&quot; key=clear</span><br><span class="line">--------------------------</span><br><span class="line">静态IP和动态IP随时切换</span><br><span class="line">建立一个static.cmd文件，用文件保存的好处是可以一次性更改。</span><br><span class="line">static.cmd写入：</span><br><span class="line">netsh interface ip set address &quot;要修改的网卡名称&quot; static 192.168.0.100 255.255.255.0 192.168.0.1 1</span><br><span class="line">建立dhcp.cmd 写入：</span><br><span class="line">netsh interface ip set address &quot;要修改的网卡名称&quot; dhcp </span><br><span class="line">ipconfig /release</span><br><span class="line">ipconfig /renew</span><br><span class="line">双击运行即可。</span><br></pre></td></tr></table></figure><p>跳转特定目录：</p><p><code>先进入要跳转的目录，在路径栏上直接输入 cmd 即可</code></p><p>打开记事本：</p><p><code>notepad</code></p><p>打开画图：</p><p><code>mspaint</code></p><p>打开计算器：</p><p><code>calc</code></p><p>打开字符映射表：</p><p><code>charmap</code></p><p>打开注册表</p><p><code>regedit.exe</code></p><p>查看windows版本</p><p><code>winver</code></p><p>打开控制面板</p><p><code>control</code></p><p>打开DVD播放器：</p><p><code>dvdplay</code></p><p>exe程序开机自启动：</p><p>win+R,输入：</p><p><code>shell:startup</code></p><p>将快捷方式或者文件放进去即可。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 计算机 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CMD命令 </tag>
             
         </tags>
       
