@@ -4,7 +4,7 @@
   
     
     <entry>
-      <title>一些资料的分享</title>
+      <title>一些软件工具的分享</title>
       <link href="/wenzhang/myshare/"/>
       <url>/wenzhang/myshare/</url>
       
@@ -79,6 +79,33 @@
     
     
     <entry>
+      <title>Typora配合github做版本管理</title>
+      <link href="/wenzhang/Typora%E9%85%8D%E5%90%88github%E6%9D%A5%E5%81%9A%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/"/>
+      <url>/wenzhang/Typora%E9%85%8D%E5%90%88github%E6%9D%A5%E5%81%9A%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/</url>
+      
+        <content type="html"><![CDATA[<h1 id="使用github来做版本管理"><a href="#使用github来做版本管理" class="headerlink" title="使用github来做版本管理"></a>使用github来做版本管理</h1><ul><li><p>注册一个github账户，记住email和name.</p></li><li><p>下载安装一个winddows版本的git：<a href="https://gitforwindows.org/">Git for Windows</a></p><h2 id="配置本机的公钥和私钥"><a href="#配置本机的公钥和私钥" class="headerlink" title="配置本机的公钥和私钥"></a>配置本机的公钥和私钥</h2></li><li><p>在用户目录下新建一个 <strong>.ssh</strong> 目录，进入**.ssh** ,右键点击：<code>Git Bash Here</code></p></li><li><p>执行：<code>ssh-keygen -t rsa</code> 并按回车。(如果提示没有ssh-keygen命令，可以在系统设置中添加可选功能，把openssh客户端和服务端一起安装。)</p></li><li><p>执行完成之后，会在.ssh 目录下生成两个文件。<code>id_rsa,id_rsa_pub</code>.其中<code>id_rsa.pub</code>是公钥</p></li><li><p>打开github的设置，选择<code>SSH Keys</code>，添加一个<code>new SSH key</code>,输入<code>id_rsa.pub</code>中的内容。</p></li><li><p>打开要保存在github的笔记仓库（没有就新建一个），复制SSH链接。</p></li></ul><h2 id="远端与本地的同步"><a href="#远端与本地的同步" class="headerlink" title="远端与本地的同步"></a>远端与本地的同步</h2><ul><li>在本地新建一个文件夹，用来同步github。进入文件夹执行 <code>Git Bash Here</code></li><li>拉取到本地，输入 <code>git clone ssh链接</code>  ssh链接就是上一步复制的链接</li><li>进入有.git的新生成的文件夹，这里就可以创建树状结构的文件目录了。</li></ul><h2 id="本地提交到github"><a href="#本地提交到github" class="headerlink" title="本地提交到github"></a>本地提交到github</h2><ul><li><p>进入到有.github的文件夹，执行 <code>Git Bash Here</code> </p></li><li><p>添加全部新文件 <code>git add .</code> 也可以手动指定添加哪些文件</p></li><li><p>提交：<code>git commit -m &quot;描述&quot;</code></p></li><li><p>如果在提交这一步出错，需要设置一下githhub账户的邮箱和名字。</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.email &quot;you@example.com&quot;</span><br><span class="line">git config --global user.name &quot;Your Name&quot;</span><br></pre></td></tr></table></figure><p>设置好后，再次提交就行了。</p></li><li><p>Push到github</p><p><code>git push</code></p></li></ul><p>到此，同步设置已经完成了。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 软件工具 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> typora </tag>
+            
+            <tag> github </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>QQ机器人部署到服务器</title>
       <link href="/wenzhang/QQ%E6%9C%BA%E5%99%A8%E4%BA%BA%E9%83%A8%E7%BD%B2%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
       <url>/wenzhang/QQ%E6%9C%BA%E5%99%A8%E4%BA%BA%E9%83%A8%E7%BD%B2%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/</url>
@@ -100,33 +127,6 @@
             <tag> centos </tag>
             
             <tag> 服务器 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Typora配合github做版本管理</title>
-      <link href="/wenzhang/Typora%E9%85%8D%E5%90%88github%E6%9D%A5%E5%81%9A%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/"/>
-      <url>/wenzhang/Typora%E9%85%8D%E5%90%88github%E6%9D%A5%E5%81%9A%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/</url>
-      
-        <content type="html"><![CDATA[<h1 id="使用github来做版本管理"><a href="#使用github来做版本管理" class="headerlink" title="使用github来做版本管理"></a>使用github来做版本管理</h1><ul><li><p>注册一个github账户，记住email和name.</p></li><li><p>下载安装一个winddows版本的git：<a href="https://gitforwindows.org/">Git for Windows</a></p><h2 id="配置本机的公钥和私钥"><a href="#配置本机的公钥和私钥" class="headerlink" title="配置本机的公钥和私钥"></a>配置本机的公钥和私钥</h2></li><li><p>在用户目录下新建一个 <strong>.ssh</strong> 目录，进入**.ssh** ,右键点击：<code>Git Bash Here</code></p></li><li><p>执行：<code>ssh-keygen -t rsa</code> 并按回车。(如果提示没有ssh-keygen命令，可以在系统设置中添加可选功能，把openssh客户端和服务端一起安装。)</p></li><li><p>执行完成之后，会在.ssh 目录下生成两个文件。<code>id_rsa,id_rsa_pub</code>.其中<code>id_rsa.pub</code>是公钥</p></li><li><p>打开github的设置，选择<code>SSH Keys</code>，添加一个<code>new SSH key</code>,输入<code>id_rsa.pub</code>中的内容。</p></li><li><p>打开要保存在github的笔记仓库（没有就新建一个），复制SSH链接。</p></li></ul><h2 id="远端与本地的同步"><a href="#远端与本地的同步" class="headerlink" title="远端与本地的同步"></a>远端与本地的同步</h2><ul><li>在本地新建一个文件夹，用来同步github。进入文件夹执行 <code>Git Bash Here</code></li><li>拉取到本地，输入 <code>git clone ssh链接</code>  ssh链接就是上一步复制的链接</li><li>进入有.git的新生成的文件夹，这里就可以创建树状结构的文件目录了。</li></ul><h2 id="本地提交到github"><a href="#本地提交到github" class="headerlink" title="本地提交到github"></a>本地提交到github</h2><ul><li><p>进入到有.github的文件夹，执行 <code>Git Bash Here</code> </p></li><li><p>添加全部新文件 <code>git add .</code> 也可以手动指定添加哪些文件</p></li><li><p>提交：<code>git commit -m &quot;描述&quot;</code></p></li><li><p>如果在提交这一步出错，需要设置一下githhub账户的邮箱和名字。</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.email &quot;you@example.com&quot;</span><br><span class="line">git config --global user.name &quot;Your Name&quot;</span><br></pre></td></tr></table></figure><p>设置好后，再次提交就行了。</p></li><li><p>Push到github</p><p><code>git push</code></p></li></ul><p>到此，同步设置已经完成了。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 软件工具 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> typora </tag>
-            
-            <tag> github </tag>
             
         </tags>
       
@@ -237,31 +237,6 @@
     
     
     <entry>
-      <title>通过Alist将过网盘挂载到本地</title>
-      <link href="/wenzhang/%E5%B0%86%E7%BD%91%E7%9B%98%E6%8C%82%E8%BD%BD%E5%88%B0%E6%9C%AC%E5%9C%B0/"/>
-      <url>/wenzhang/%E5%B0%86%E7%BD%91%E7%9B%98%E6%8C%82%E8%BD%BD%E5%88%B0%E6%9C%AC%E5%9C%B0/</url>
-      
-        <content type="html"><![CDATA[<h2 id="为什么要将网盘挂载到本地"><a href="#为什么要将网盘挂载到本地" class="headerlink" title="为什么要将网盘挂载到本地"></a>为什么要将网盘挂载到本地</h2><p>将网盘挂载到本地的好处：</p><p>访问网盘就像访问本地文件夹一样方便，网盘上的文件无需下载就能直接访问。比如mp4视频，直接可以用电脑上的播放器打开。比如office安装包，直接安装，无需下载。用一句话总结就是：将网盘变成本地硬盘。</p><h2 id="如何挂载"><a href="#如何挂载" class="headerlink" title="如何挂载"></a>如何挂载</h2><p>需要用到两个软件：Alist 和 RaiDrive</p><p>Alist负责将网盘上的文件，映射到本地某个端口，可以用浏览器访问。</p><p>RaiDrive负责本该是浏览器访问的网盘，映射到本地，可以在本地直接访问。</p><p>注意点：Alist 和 RaiDrive这两个软件，需要打开，才能正常使用，如果关闭，则不能访问。 </p><p>软件安装包：</p><p>蓝奏云：<a href="https://wws.lanzoul.com/iDuTi0dq77ji">https://wws.lanzoul.com/iDuTi0dq77ji</a><br>                密码:7027</p><hr><p>百度网盘： <a href="https://pan.baidu.com/s/1RY6QnQS9Y1FlsntWCa3Cww?pwd=4wyn">https://pan.baidu.com/s/1RY6QnQS9Y1FlsntWCa3Cww?pwd=4wyn</a> </p><p>提取码: 4wyn </p><h2 id="可以挂载哪些网盘"><a href="#可以挂载哪些网盘" class="headerlink" title="可以挂载哪些网盘"></a>可以挂载哪些网盘</h2><p>支持的网盘：百度网盘，阿里云盘，OneDrive，天翼云盘，蓝奏云，123云盘，谷歌云盘，夸克网盘，迅雷网盘等等。</p><p>支持的非常多，一定支持你要挂载的云盘。</p><h2 id="安装软件"><a href="#安装软件" class="headerlink" title="安装软件"></a>安装软件</h2><p>将下载好的RaiDrive进行安装，安装过程中，需要一些库的支持，一并安装就好了。</p><p>Alist不需要安装，直接以管理员的身份运行即可。</p><h2 id="第一步、运行Alist"><a href="#第一步、运行Alist" class="headerlink" title="第一步、运行Alist"></a>第一步、运行Alist</h2><p>右键以管理员的身份运行</p><p><img src="https://picgo.symbol.cloudns.be/img/alist%E9%A1%B5%E9%9D%A2.png"></p><p>并记住初始登录密码，等下登录需要用到。</p><p>在浏览器输入下面网址，访问Alist后台。</p><p><strong><a href="http://127.0.0.1:5244/">http://127.0.0.1:5244</a></strong></p><p>首次登录需要密码，填入刚才记录的初始密码。</p><h2 id="第二步、设置Alist"><a href="#第二步、设置Alist" class="headerlink" title="第二步、设置Alist"></a>第二步、设置Alist</h2><p>进入后台，显示的页面如下</p><p><img src="https://picgo.symbol.cloudns.be/img/Alist%E9%A1%B5%E9%9D%A22.png"></p><p>点击左边的账号，再点击添加。</p><h6 id="添加的时候，选择一个网盘，比如选择阿里云盘。虚拟路径，填写一个电脑上没有的盘符，比如：E，F，G，H，I等等都可以。不要填本地电脑上已有的盘符。"><a href="#添加的时候，选择一个网盘，比如选择阿里云盘。虚拟路径，填写一个电脑上没有的盘符，比如：E，F，G，H，I等等都可以。不要填本地电脑上已有的盘符。" class="headerlink" title="添加的时候，选择一个网盘，比如选择阿里云盘。虚拟路径，填写一个电脑上没有的盘符，比如：E，F，G，H，I等等都可以。不要填本地电脑上已有的盘符。"></a>添加的时候，选择一个网盘，比如选择阿里云盘。虚拟路径，填写一个电脑上没有的盘符，比如：E，F，G，H，I等等都可以。不要填本地电脑上已有的盘符。</h6><p><img src="https://picgo.symbol.cloudns.be/img/%E4%BB%A4%E7%89%8C.png"></p><p>添加的时候，重点是要获得到一个令牌。</p><p>访问Alist官方文档，查看获取令牌的方法：</p><p><strong><a href="https://alist-doc.nn.ci/docs/driver/aliyundrive/">https://alist-doc.nn.ci/docs/driver/aliyundrive/</a></strong></p><p>点击<strong>Get Token</strong></p><p><img src="https://picgo.symbol.cloudns.be/img/%E8%8E%B7%E5%BE%97%E4%BB%A4%E7%89%8C.png"></p><p>不同网盘获取令牌的方式可能略有不同，阿里云盘需要用手机端App扫码。</p><p>总之能获得到就行，这里的令牌，相当于是要绑定自己的账号，如此才能访问到自己的网盘。</p><p>复制到令牌后，粘贴到上上图中刷新令牌的位置。然后点击保存即可。</p><p>到这一步就添加好了，可以通过浏览器来访问自己的网盘了。</p><p>打开：<code>http://127.0.0.1:5244</code></p><p>这一步要能访问到自己的网盘，再进行下一步。下一步就是设置在本地访问网盘中的文件。</p><h2 id="第三步、运行RaiDrive"><a href="#第三步、运行RaiDrive" class="headerlink" title="第三步、运行RaiDrive"></a>第三步、运行RaiDrive</h2><p>添加 <code>+Add</code>，添加一个网盘，然后填写配置。</p><p><img src="https://picgo.symbol.cloudns.be/img/rai.jpg"></p><p>图片中的 Account，如果是中文，则会显示账户。</p><p>这里填写自己Alist后台中的 </p><p><code>WebDav username和WebDav password</code></p><p>每个人都是不一样的。</p><p>最后点击<strong>连接</strong>就行了。</p><p>至此大功告成了，就可以在自己的电脑上访问网盘中的内容了。</p><p><img src="https://picgo.symbol.cloudns.be/img/OK.png"></p><h3 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h3><p>一、<strong>只有Alist和RaiDrive运行，才能正常访问。并且是先以管理员身份运行Alist,再运行Raidrive</strong></p><p>二、当需要访问网盘的时候，运行即可，如果网盘中文件太多，同步网盘可以需要花点时间。</p><p>三、电脑必须连上网，才能正常映射。自己的电脑如果没网，也是访问不到网盘的，这是同一个道理。</p><p>四、其他网盘的添加方法类似，就是在添加时改一下网盘类型，虚拟路径不要重复，然后获取到令牌即可。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 软件工具 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Alist </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>字符集讲解</title>
       <link href="/wenzhang/%E5%AD%97%E7%AC%A6%E9%9B%86%E8%AE%B2%E8%A7%A3/"/>
       <url>/wenzhang/%E5%AD%97%E7%AC%A6%E9%9B%86%E8%AE%B2%E8%A7%A3/</url>
@@ -304,6 +279,31 @@
         <tags>
             
             <tag> markdown </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>通过Alist将过网盘挂载到本地</title>
+      <link href="/wenzhang/%E5%B0%86%E7%BD%91%E7%9B%98%E6%8C%82%E8%BD%BD%E5%88%B0%E6%9C%AC%E5%9C%B0/"/>
+      <url>/wenzhang/%E5%B0%86%E7%BD%91%E7%9B%98%E6%8C%82%E8%BD%BD%E5%88%B0%E6%9C%AC%E5%9C%B0/</url>
+      
+        <content type="html"><![CDATA[<h2 id="为什么要将网盘挂载到本地"><a href="#为什么要将网盘挂载到本地" class="headerlink" title="为什么要将网盘挂载到本地"></a>为什么要将网盘挂载到本地</h2><p>将网盘挂载到本地的好处：</p><p>访问网盘就像访问本地文件夹一样方便，网盘上的文件无需下载就能直接访问。比如mp4视频，直接可以用电脑上的播放器打开。比如office安装包，直接安装，无需下载。用一句话总结就是：将网盘变成本地硬盘。</p><h2 id="如何挂载"><a href="#如何挂载" class="headerlink" title="如何挂载"></a>如何挂载</h2><p>需要用到两个软件：Alist 和 RaiDrive</p><p>Alist负责将网盘上的文件，映射到本地某个端口，可以用浏览器访问。</p><p>RaiDrive负责本该是浏览器访问的网盘，映射到本地，可以在本地直接访问。</p><p>注意点：Alist 和 RaiDrive这两个软件，需要打开，才能正常使用，如果关闭，则不能访问。 </p><p>软件安装包：</p><p>蓝奏云：<a href="https://wws.lanzoul.com/iDuTi0dq77ji">https://wws.lanzoul.com/iDuTi0dq77ji</a><br>                密码:7027</p><hr><p>百度网盘： <a href="https://pan.baidu.com/s/1RY6QnQS9Y1FlsntWCa3Cww?pwd=4wyn">https://pan.baidu.com/s/1RY6QnQS9Y1FlsntWCa3Cww?pwd=4wyn</a> </p><p>提取码: 4wyn </p><h2 id="可以挂载哪些网盘"><a href="#可以挂载哪些网盘" class="headerlink" title="可以挂载哪些网盘"></a>可以挂载哪些网盘</h2><p>支持的网盘：百度网盘，阿里云盘，OneDrive，天翼云盘，蓝奏云，123云盘，谷歌云盘，夸克网盘，迅雷网盘等等。</p><p>支持的非常多，一定支持你要挂载的云盘。</p><h2 id="安装软件"><a href="#安装软件" class="headerlink" title="安装软件"></a>安装软件</h2><p>将下载好的RaiDrive进行安装，安装过程中，需要一些库的支持，一并安装就好了。</p><p>Alist不需要安装，直接以管理员的身份运行即可。</p><h2 id="第一步、运行Alist"><a href="#第一步、运行Alist" class="headerlink" title="第一步、运行Alist"></a>第一步、运行Alist</h2><p>右键以管理员的身份运行</p><p><img src="https://picgo.symbol.cloudns.be/img/alist%E9%A1%B5%E9%9D%A2.png"></p><p>并记住初始登录密码，等下登录需要用到。</p><p>在浏览器输入下面网址，访问Alist后台。</p><p><strong><a href="http://127.0.0.1:5244/">http://127.0.0.1:5244</a></strong></p><p>首次登录需要密码，填入刚才记录的初始密码。</p><h2 id="第二步、设置Alist"><a href="#第二步、设置Alist" class="headerlink" title="第二步、设置Alist"></a>第二步、设置Alist</h2><p>进入后台，显示的页面如下</p><p><img src="https://picgo.symbol.cloudns.be/img/Alist%E9%A1%B5%E9%9D%A22.png"></p><p>点击左边的账号，再点击添加。</p><h6 id="添加的时候，选择一个网盘，比如选择阿里云盘。虚拟路径，填写一个电脑上没有的盘符，比如：E，F，G，H，I等等都可以。不要填本地电脑上已有的盘符。"><a href="#添加的时候，选择一个网盘，比如选择阿里云盘。虚拟路径，填写一个电脑上没有的盘符，比如：E，F，G，H，I等等都可以。不要填本地电脑上已有的盘符。" class="headerlink" title="添加的时候，选择一个网盘，比如选择阿里云盘。虚拟路径，填写一个电脑上没有的盘符，比如：E，F，G，H，I等等都可以。不要填本地电脑上已有的盘符。"></a>添加的时候，选择一个网盘，比如选择阿里云盘。虚拟路径，填写一个电脑上没有的盘符，比如：E，F，G，H，I等等都可以。不要填本地电脑上已有的盘符。</h6><p><img src="https://picgo.symbol.cloudns.be/img/%E4%BB%A4%E7%89%8C.png"></p><p>添加的时候，重点是要获得到一个令牌。</p><p>访问Alist官方文档，查看获取令牌的方法：</p><p><strong><a href="https://alist-doc.nn.ci/docs/driver/aliyundrive/">https://alist-doc.nn.ci/docs/driver/aliyundrive/</a></strong></p><p>点击<strong>Get Token</strong></p><p><img src="https://picgo.symbol.cloudns.be/img/%E8%8E%B7%E5%BE%97%E4%BB%A4%E7%89%8C.png"></p><p>不同网盘获取令牌的方式可能略有不同，阿里云盘需要用手机端App扫码。</p><p>总之能获得到就行，这里的令牌，相当于是要绑定自己的账号，如此才能访问到自己的网盘。</p><p>复制到令牌后，粘贴到上上图中刷新令牌的位置。然后点击保存即可。</p><p>到这一步就添加好了，可以通过浏览器来访问自己的网盘了。</p><p>打开：<code>http://127.0.0.1:5244</code></p><p>这一步要能访问到自己的网盘，再进行下一步。下一步就是设置在本地访问网盘中的文件。</p><h2 id="第三步、运行RaiDrive"><a href="#第三步、运行RaiDrive" class="headerlink" title="第三步、运行RaiDrive"></a>第三步、运行RaiDrive</h2><p>添加 <code>+Add</code>，添加一个网盘，然后填写配置。</p><p><img src="https://picgo.symbol.cloudns.be/img/rai.jpg"></p><p>图片中的 Account，如果是中文，则会显示账户。</p><p>这里填写自己Alist后台中的 </p><p><code>WebDav username和WebDav password</code></p><p>每个人都是不一样的。</p><p>最后点击<strong>连接</strong>就行了。</p><p>至此大功告成了，就可以在自己的电脑上访问网盘中的内容了。</p><p><img src="https://picgo.symbol.cloudns.be/img/OK.png"></p><h3 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h3><p>一、<strong>只有Alist和RaiDrive运行，才能正常访问。并且是先以管理员身份运行Alist,再运行Raidrive</strong></p><p>二、当需要访问网盘的时候，运行即可，如果网盘中文件太多，同步网盘可以需要花点时间。</p><p>三、电脑必须连上网，才能正常映射。自己的电脑如果没网，也是访问不到网盘的，这是同一个道理。</p><p>四、其他网盘的添加方法类似，就是在添加时改一下网盘类型，虚拟路径不要重复，然后获取到令牌即可。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 软件工具 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Alist </tag>
             
         </tags>
       
